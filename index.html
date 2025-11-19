@@ -121,8 +121,81 @@
     </div>
     <!-- Navbar End -->
 
+    <!-- Services Detail Modal -->
+    <div class="modal fade" id="serviceDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="serviceModalIcon" class="fa fa-2x text-primary me-3"></div>
+                    <h4 id="serviceModalTitle" class="modal-title"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="serviceModalDesc"></p>
+                    <h6 class="mt-4 mb-3">Key Benefits:</h6>
+                    <ul id="serviceModalBenefits" class="list-group list-group-flush"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Carousel Start -->
+    <!-- Products Detail Modal -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img id="productModalImage" src="" alt="" style="height: 50px; width: auto;" class="me-3">
+                    <h4 id="productModalTitle" class="modal-title"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="productModalDesc"></p>
+                    <h6 class="mt-4 mb-3">Why Choose This Product:</h6>
+                    <ul id="productModalFeatures" class="list-group list-group-flush"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Packages Detail Modal -->
+    <div class="modal fade" id="packageDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="packageModalTitle" class="modal-title"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Package Details:</h6>
+                            <p id="packageModalDesc"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Ideal For:</h6>
+                            <p id="packageModalTarget"></p>
+                            <h6 class="mb-3">Key Features:</h6>
+                            <ul id="packageModalFeatures" class="list-group list-group-flush"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Purchase Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Start -->
     <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel py-5">
             <div class="container py-5">
@@ -132,8 +205,8 @@
                             <h1 class="display-1 text-uppercase mb-3">Together for a Better Tomorrow</h1>
                             <p class="fs-5 mb-5">We believe in creating opportunities and empowering businesses through smart technology, innovation, and reliable software solutions.</p>
                             <div class="d-flex">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="#!">Explore</a>
-                                <a class="btn btn-secondary py-3 px-4" href="#!">Contact Us</a>
+                                <a class="btn btn-primary py-3 px-4 me-3" href="Packages.html">Explore</a>
+                                <a class="btn btn-secondary py-3 px-4" href="contact.html">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -152,8 +225,8 @@
                             <p class="fs-5 mb-5">No one should suffer losses from business management errors.
                                     At Softwiz Pro Ltd, we deliver smart solutions to help you manage efficiently, prevent costly mistakes, and achieve growth.</p>
                             <div class="d-flex mt-4">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="#!">Explore</a>
-                                <a class="btn btn-secondary py-3 px-4" href="#!">Contact Us</a>
+                                <a class="btn btn-primary py-3 px-4 me-3" href="Packages.html">Explore</a>
+                                <a class="btn btn-secondary py-3 px-4" href="contact.html">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -199,7 +272,7 @@
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 bg-primary p-4 text-center">
                                 <p class="fs-5 text-dark">With our technology, we empower businesses to work smarter and grow.</p>
-                                <a class="btn btn-secondary py-2 px-4" href="#!">Contact Us Now</a>
+                                <a class="btn btn-secondary py-2 px-4" href="contact.html">Contact Us Now</a>
                             </div>
                         </div>
                     </div>
@@ -229,7 +302,7 @@
                                 </div>
                                 <h3>Point Of Sale</h3>
                                 <p class="mb-2">We offer Point of Sale module  that streamlines sales, simplifies transactions, and provides real-time insights, helping businesses operate efficiently while serving customers better.</p>
-                                <a href="#!">Read More</a>
+                                <button class="btn btn-link p-0 service-read-more-btn" data-title="Point Of Sale" data-desc="Our Point of Sale system is designed to revolutionize how businesses handle transactions. It streamlines the entire sales process from order taking to payment processing, while providing real-time insights into your business performance. The system integrates inventory tracking, customer management, and advanced reporting all in one unified platform." data-benefits="Fast & Reliable Transactions|Real-Time Sales Insights|Multi-Payment Support|Offline Mode Capability|Inventory Integration|Customer Database Management|Detailed Transaction Reports">Read More</button>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
@@ -239,7 +312,7 @@
                                 </div>
                                 <h3>Stock Handling</h3>
                                 <p class="mb-2">We track inventory in real-time, monitor stock levels, and reduce shortages,we are also helping businesses operate very efficiently while maintaining full control.</p>
-                                <a href="#!">Read More</a>
+                                <button class="btn btn-link p-0 service-read-more-btn" data-title="Stock Handling" data-desc="Efficient inventory management is crucial for business success. Our Stock Handling module provides complete visibility into your inventory levels across multiple locations. Automatically track stock movements, set reorder points, and receive alerts when inventory runs low. Reduce stockouts and overstocking with intelligent forecasting and analytics." data-benefits="Real-Time Inventory Tracking|Automated Reorder Alerts|Multi-Location Management|Stock Transfer Capabilities|Expiry Date Monitoring|Barcode Integration|Inventory Variance Reports">Read More</button>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
@@ -249,7 +322,7 @@
                                 </div>
                                 <h3>Accounting</h3>
                                 <p class="mb-2">We handle accounting by automating financial records, tracking expenses and revenue, and ensuring accuracy, helping businesses operate efficiently while maintaining financial clarity.</p>
-                                <a href="#!">Read More</a>
+                                <button class="btn btn-link p-0 service-read-more-btn" data-title="Accounting" data-desc="Our comprehensive Accounting module automates your entire financial management process. From invoice creation and expense tracking to financial statement generation, everything is streamlined and accurate. Maintain complete audit trails, manage multiple cost centers, and ensure compliance with accounting standards. Gain clear visibility into your business finances with real-time dashboards." data-benefits="Automated Invoice Generation|Expense Tracking & Categorization|Financial Statement Reports|Multi-Currency Support|Tax Compliance Tools|Audit Trail Maintenance|Budget vs Actual Analysis">Read More</button>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.1s">
@@ -259,7 +332,7 @@
                                 </div>
                                 <h3>Expenses</h3>
                                 <p class="mb-2">We track expenses in real-time, monitor costs and spending, and reduce oversights, helping businesses operate very efficiently while maintaining full control</p>
-                                <a href="#!">Read More</a>
+                                <button class="btn btn-link p-0 service-read-more-btn" data-title="Expenses" data-desc="Control your business expenses with our advanced Expense Management system. Track spending across departments, projects, and cost centers in real-time. Implement approval workflows, set budget limits, and receive instant notifications for policy violations. Detailed expense reports help identify cost-saving opportunities and ensure financial discipline across your organization." data-benefits="Real-Time Expense Tracking|Department-Wise Budgeting|Approval Workflows|Policy Enforcement|Expense Categorization|Budget Alert System|Monthly/Annual Expense Reports">Read More</button>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
@@ -269,7 +342,7 @@
                                 </div>
                                 <h3>Reports & Analytics</h3>
                                 <p class="mb-2">We generate reports and analyze data to provide insights while supporting informed decisions and fostering long-term business growth.</p>
-                                <a href="#!">Read More</a>
+                                <button class="btn btn-link p-0 service-read-more-btn" data-title="Reports & Analytics" data-desc="Transform raw data into actionable insights with our advanced Analytics module. Generate custom reports, visualize trends with interactive dashboards, and make data-driven decisions. Track key performance indicators (KPIs), analyze sales patterns, and predict future trends using intelligent analytics. Export reports in multiple formats and schedule automated report delivery." data-benefits="Custom Report Builder|Interactive Dashboards|KPI Tracking|Sales Trend Analysis|Predictive Analytics|Data Visualization|Scheduled Report Delivery">Read More</button>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
@@ -279,7 +352,7 @@
                                 </div>
                                 <h3>Customer Support</h3>
                                 <p class="mb-2">We provide customer support to resolve issues promptly while building strong relationships and ensuring long-term satisfaction and business success.</p>
-                                <a href="#!">Read More</a>
+                                <button class="btn btn-link p-0 service-read-more-btn" data-title="Customer Support" data-desc="Our comprehensive Customer Support system helps you deliver exceptional service at every touchpoint. Manage support tickets, track customer issues, and maintain complete communication history. Provide multi-channel support through email, chat, and phone. Ensure no customer inquiry goes unanswered with automated escalation and performance tracking." data-benefits="Ticket Management System|Multi-Channel Support|Customer History Tracking|Automated Escalation|Response Time Analytics|Customer Satisfaction Surveys|Support Team Performance Metrics">Read More</button>
                             </div>
                         </div>
                     </div>
@@ -360,8 +433,8 @@
                         <img class="img-fluid w-100 mb-4" src="img/RetailSystem.png" alt="">
                         <a href="#!" class="h3 d-inline-block">Retail management System</a>
                         <p>We help retail businesses simplify daily operations, manage sales efficiently, and improve customer experiences with our smart POS system.</p>
-                        <a href="#!" class="btn btn-primary w-100 py-3"><i class=""></i>Read More
-                            </a>
+                        <button class="btn btn-primary w-100 py-3 product-read-more-btn" data-title="Retail Management System" data-image="img/RetailSystem.png" data-desc="Our Retail Management System is specifically designed for retail businesses of all sizes. It combines a powerful POS system with comprehensive inventory management, customer loyalty programs, and detailed sales analytics. Manage multiple stores from a central dashboard, track real-time sales performance, and make informed decisions to drive profitability." data-features="Multi-Store Management|Intelligent Inventory|Customer Loyalty Programs|Real-Time Sales Analytics|Employee Management|Barcode Integration|Cloud-Based Operations"><i class=""></i>Read More
+                            </button>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
@@ -369,8 +442,8 @@
                         <img class="img-fluid w-100 mb-4" src="img/Bar and Restaurant.png" alt="">
                         <a href="#!" class="h3 d-inline-block">Bar and Restaurant System</a>
                         <p>We help bar and restaurant owners manage orders, track sales, and deliver seamless customer experiences through our smart POS system.</p>
-                        <a href="#!" class="btn btn-primary w-100 py-3"><i class=""></i>Read More
-                            </a>
+                        <button class="btn btn-primary w-100 py-3 product-read-more-btn" data-title="Bar and Restaurant System" data-image="img/Bar and Restaurant.png" data-desc="Streamline your bar and restaurant operations with our specialized POS system. Manage table orders, kitchen workflows, and customer payments seamlessly. Track ingredient costs, manage staff shifts, and optimize menu performance. Reduce wait times, improve accuracy, and enhance customer satisfaction with our intuitive interface and powerful backend management tools." data-features="Table Management System|Kitchen Order Display|Staff Shift Scheduling|Menu Performance Analytics|Ingredient Cost Tracking|Multi-Terminal Support|Customer Feedback Integration"><i class=""></i>Read More
+                            </button>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
@@ -378,7 +451,7 @@
                         <img class="img-fluid w-100 mb-4" src="img/Payroll.png" alt="">
                         <a href="#!" class="h3 d-inline-block">Payroll System</a>
                         <p>We help businesses simplify payroll processing, manage employee records, and ensure timely, accurate payments through our reliable payroll system.</p>
-                        <a href="#!" class="btn btn-primary w-100 py-3"><i class=""></i>Read More </a>
+                        <button class="btn btn-primary w-100 py-3 product-read-more-btn" data-title="Payroll System" data-image="img/Payroll.png" data-desc="Automate your payroll management with our comprehensive Payroll System. Calculate salaries with various pay structures, manage tax deductions, and generate payment reports automatically. Maintain detailed employee records, track leave and attendance, and ensure compliance with labor regulations. Reduce administrative burden and eliminate payroll errors with our secure, reliable system." data-features="Automated Salary Calculation|Tax & Deduction Management|Leave & Attendance Tracking|Employee Self-Service Portal|Compliance Reporting|Bulk Payment Processing|Payslip Generation"><i class=""></i>Read More </button>
                     </div>
                 </div>
             </div>
@@ -417,7 +490,7 @@
                             <a href="#!" class="h3 d-inline-block">Lite</a>
                             <p>Ideal for small businesses starting out, offering essential tools to manage sales and operations efficiently
                             </p>
-                            <a href="#!" class="btn btn-primary w-100 py-3"><i class=" me-2"></i>Read More</a>
+                            <button class="btn btn-primary w-100 py-3 package-read-more-btn" data-title="Lite Package" data-desc="Our Lite package is perfect for small businesses just starting their digital transformation journey. It includes essential features to get your business running efficiently." data-target="Small businesses, startups, single-location shops" data-features="Basic POS System|Single User Account|Essential Inventory Management|Daily Sales Reports|Email Support|30-Day Data Backup"><i class=" me-2"></i>Read More</button>
                         </div>
                     </div>
                 </div>
@@ -444,7 +517,7 @@
                             <a href="#!" class="h3 d-inline-block">Advance </a>
                             <p>Perfect for growing businesses, with enhanced features for inventory, reporting, and customer management.
                             </p>
-                            <a href="#!" class="btn btn-primary w-100 py-3"><i class=" "></i>Read More</a>
+                            <button class="btn btn-primary w-100 py-3 package-read-more-btn" data-title="Advance Package" data-desc="Our Advance package is designed for growing businesses that need more powerful features and scalability. It includes advanced inventory management, comprehensive reporting, and customer relationship tools." data-target="Growing businesses, multiple departments, 2-5 locations" data-features="Advanced POS System|Multi-User Accounts|Advanced Inventory Control|Custom Reports|Customer Loyalty Program|Phone & Email Support|90-Day Data Backup"><i class=" "></i>Read More</button>
                         </div>
                     </div>
                 </div>
@@ -471,7 +544,7 @@
                             <a href="#!" class="h3 d-inline-block">Pro</a>
                             <p>Designed for established businesses, providing advanced analytics, automation, and full operational control.
                             </p>
-                            <a href="#!" class="btn btn-primary w-100 py-3"><i class=""></i>Read More</a>
+                            <button class="btn btn-primary w-100 py-3 package-read-more-btn" data-title="Pro Package" data-desc="Our Pro package is built for established businesses that demand advanced features, detailed analytics, and automation capabilities. It provides comprehensive operational control and strategic insights." data-target="Established businesses, enterprise operations, 5-20 locations" data-features="Enterprise POS System|Unlimited Users|Advanced Analytics Engine|Automation Workflows|Real-Time Dashboards|Priority Phone Support|Unlimited Data Backup"><i class=""></i>Read More</button>
                         </div>
                     </div>
                 </div>
@@ -498,8 +571,8 @@
                             <a href="#!" class="h3 d-inline-block">Enterprise</a>
                             <p>Our complete solution for large organizations, delivering full customization, integrations, and premium support.
                             </p>
-                            <a href="#!" class="btn btn-primary w-100 py-3"><i class=""></i>Read More
-                            </a>
+                            <button class="btn btn-primary w-100 py-3 package-read-more-btn" data-title="Enterprise Package" data-desc="Our Enterprise package is the ultimate solution for large organizations with complex requirements. It delivers full customization, unlimited integrations, and dedicated premium support to meet your unique business needs." data-target="Large enterprises, complex operations, 20+ locations" data-features="Fully Customized Solution|White-Label Options|API Integrations|Dedicated Account Manager|24/7 Priority Support|Custom Training|On-Premise or Cloud"><i class=""></i>Read More
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -97,6 +97,99 @@
         }
     });
 
+    // Service Detail Modal (Read More buttons on homepage services section)
+    $(document).on('click', '.service-read-more-btn', function () {
+        var $btn = $(this);
+        var title = $btn.data('title') || '';
+        var desc = $btn.data('desc') || '';
+        var benefits = $btn.data('benefits') || '';
+        var icon = $btn.data('icon') || 'fa-cog';
+
+        // Set title and description
+        $('#serviceModalTitle').text(title);
+        $('#serviceModalDesc').text(desc);
+        $('#serviceModalIcon').attr('class', 'fa ' + icon + ' fa-2x text-primary');
+
+        // Parse and populate benefits list
+        var benefitsArray = benefits.split('|');
+        var benefitsList = '';
+        $.each(benefitsArray, function (index, benefit) {
+            benefit = $.trim(benefit);
+            if (benefit) {
+                benefitsList += '<li class="list-group-item"><i class="fa fa-check text-success me-2"></i>' + benefit + '</li>';
+            }
+        });
+        $('#serviceModalBenefits').html(benefitsList);
+
+        var bsModalEl = document.getElementById('serviceDetailModal');
+        if (bsModalEl) {
+            var bsModal = new bootstrap.Modal(bsModalEl);
+            bsModal.show();
+        }
+    });
+
+    // Product Detail Modal (Read More buttons on homepage products section)
+    $(document).on('click', '.product-read-more-btn', function () {
+        var $btn = $(this);
+        var title = $btn.data('title') || '';
+        var desc = $btn.data('desc') || '';
+        var features = $btn.data('features') || '';
+        var image = $btn.data('image') || 'img/default-product.png';
+
+        // Set title, description, and image
+        $('#productModalTitle').text(title);
+        $('#productModalDesc').text(desc);
+        $('#productModalImage').attr('src', image).attr('alt', title + ' product image');
+
+        // Parse and populate features list
+        var featuresArray = features.split('|');
+        var featuresList = '';
+        $.each(featuresArray, function (index, feature) {
+            feature = $.trim(feature);
+            if (feature) {
+                featuresList += '<li class="list-group-item"><i class="fa fa-star text-warning me-2"></i>' + feature + '</li>';
+            }
+        });
+        $('#productModalFeatures').html(featuresList);
+
+        var bsModalEl = document.getElementById('productDetailModal');
+        if (bsModalEl) {
+            var bsModal = new bootstrap.Modal(bsModalEl);
+            bsModal.show();
+        }
+    });
+
+    // Package Detail Modal (Read More buttons on homepage packages section)
+    $(document).on('click', '.package-read-more-btn', function () {
+        var $btn = $(this);
+        var title = $btn.data('title') || '';
+        var desc = $btn.data('desc') || '';
+        var target = $btn.data('target') || '';
+        var features = $btn.data('features') || '';
+
+        // Set title, description, and target audience
+        $('#packageModalTitle').text(title);
+        $('#packageModalDesc').text(desc);
+        $('#packageModalTarget').html('<strong>Ideal For:</strong> ' + target);
+
+        // Parse and populate features list
+        var featuresArray = features.split('|');
+        var featuresList = '';
+        $.each(featuresArray, function (index, feature) {
+            feature = $.trim(feature);
+            if (feature) {
+                featuresList += '<li class="list-group-item"><i class="fa fa-check-circle text-primary me-2"></i>' + feature + '</li>';
+            }
+        });
+        $('#packageModalFeatures').html(featuresList);
+
+        var bsModalEl = document.getElementById('packageDetailModal');
+        if (bsModalEl) {
+            var bsModal = new bootstrap.Modal(bsModalEl);
+            bsModal.show();
+        }
+    });
+
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
