@@ -157,6 +157,7 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    display: none;
 }
 
 .header-carousel .owl-nav .owl-prev,
@@ -170,6 +171,13 @@
     font-size: 22px;
     color: var(--bs-dark);
     background: var(--bs-primary);
+}
+
+/* Show carousel navigation only on md screens and above */
+@media (min-width: 768px) {
+    .header-carousel .owl-nav {
+        display: block;
+    }
 }
 
 .page-header {
@@ -335,6 +343,7 @@
     width: 33%;
     height: 90px;
     background: var(--bs-white);
+    display: none;
 }
 
 .about-img::before {
@@ -345,6 +354,14 @@
 .about-img::after {
     right: 0px;
     bottom: 0px;
+}
+
+/* Show decorative elements on md and above */
+@media (min-width: 768px) {
+    .about-img::before,
+    .about-img::after {
+        display: block;
+    }
 }
 
 
