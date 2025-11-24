@@ -152,10 +152,11 @@
                             <button
                                 type="button"
                                 class="btn btn-primary w-100 py-3 read-more-btn"
-                                data-title="Lite"
+                                data-title="Lite Package"
                                 data-features="Basic POS, Invoicing, Email Support, Free Onboarding"
-                                data-desc="Launch quickly with essentials: fast setup, secure payments, and a simple dashboard  get your business selling in hours. Includes free onboarding and email support to help you every step of the way."
+                                data-desc="Launch quickly with essentials: fast setup, secure payments, and a simple dashboard get your business selling in hours. Includes free onboarding and email support to help you every step of the way."
                                 data-image="img/Pos4.jpeg"
+                                data-target="Small businesses, startups, single-location shops"
                             >
                                 Read More
                             </button>
@@ -187,10 +188,11 @@
                             <button
                                 type="button"
                                 class="btn btn-primary w-100 py-3 read-more-btn"
-                                data-title="Advance"
+                                data-title="Advance Package"
                                 data-features="Advanced Inventory, Automated Reporting, CRM Tools"
                                 data-desc="Scale smarter with automated inventory and reporting  reduce stockouts, improve margins, and free up hours each week. Comes with onboarding guides and chat support."
                                 data-image="img/Pos3.jpg"
+                                data-target="Growing businesses, multiple departments, 2-5 locations"
                             >
                                 Read More
                             </button>
@@ -222,10 +224,11 @@
                             <button
                                 type="button"
                                 class="btn btn-primary w-100 py-3 read-more-btn"
-                                data-title="Pro"
+                                data-title="Pro Package"
                                 data-features="Automation, Advanced Analytics, Priority Support"
                                 data-desc="Unlock growth with automation workflows and deep analytics reduce manual work, improve forecasting, and scale operations. Priority support ensures fast resolution when you need it."
                                 data-image="img/Pos2.webp"
+                                data-target="Established businesses, enterprise operations, 5-20 locations"
                             >
                                 Read More
                             </button>
@@ -257,10 +260,11 @@
                             <button
                                 type="button"
                                 class="btn btn-primary w-100 py-3 read-more-btn"
-                                data-title="Enterprise"
+                                data-title="Enterprise Package"
                                 data-features="Custom Integrations, Dedicated Team, SLA-backed Support"
                                 data-desc="Enterprise delivers a tailored solution  custom integrations, dedicated implementation, and SLA-backed support to keep mission-critical systems running. We'll build to your processes and train your team."
                                 data-image="img/Pos1.jpg"
+                                data-target="Large enterprises, complex operations, 20+ locations"
                             >
                                 Read More
                             </button>
@@ -325,7 +329,9 @@
             <!-- Business Hours & Newsletter Section -->
             <div class="row g-5 py-4 border-top border-secondary">
                 <div class="col-lg-6 col-md-6">
-                    <h5 class="text-light mb-3"><i class="fa fa-clock text-primary me-2"></i>Business Hours</h5>
+                    <h5 class="text-light mb-3">
+                        <i class="fa fa-clock text-primary me-2"></i>Business Hours
+                    </h5>
                     <div class="row">
                         <div class="col-sm-6">
                             <p class="text-light mb-1"><strong>Monday - Friday</strong></p>
@@ -339,16 +345,76 @@
                     <p class="text-secondary mt-2"><strong>Sunday:</strong> Closed</p>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <h5 class="text-light mb-3"><i class="fa fa-envelope text-primary me-2"></i>Newsletter</h5>
+                    <h5 class="text-light mb-3">
+                        <i class="fa fa-envelope text-primary me-2"></i>Newsletter
+                    </h5>
                     <p class="text-light mb-3">Subscribe to our newsletter for updates on new features and special offers.</p>
-                    <form class="footer-newsletter">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                            <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i></button>
-                        </div>
-                    </form>
+                        <form class="footer-newsletter" id="newsletterForm">
+                            <div class="input-group">
+                                <input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email" required>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+
                 </div>
             </div>
+
+            <script>
+                // Function to get CSRF token from cookies
+                function getCookie(name) {
+                    let cookieValue = null;
+                    if (document.cookie && document.cookie !== '') {
+                        const cookies = document.cookie.split(';');
+                        for (let i = 0; i < cookies.length; i++) {
+                            const cookie = cookies[i].trim();
+                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                break;
+                            }
+                        }
+                    }
+                    return cookieValue;
+                }
+
+                document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    let email = document.getElementById('newsletterEmail').value;
+                    const csrftoken = getCookie('csrftoken');
+
+                    if (!email) {
+                        showToast('Validation Error', 'Please enter a valid email address.', 'warning', 3000);
+                        return;
+                    }
+
+                    fetch("http://127.0.0.1:8000/api/subscribe/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRFToken": csrftoken,
+                        },
+                        body: JSON.stringify({ email: email }),
+                        credentials: 'include'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            showToast('Subscribed!', 'Thank you for subscribing to our newsletter.', 'success', 4000);
+                            document.getElementById('newsletterEmail').value = "";
+                        } else {
+                            showToast('Error', data.message || 'Failed to subscribe. Please try again.', 'error', 4000);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showToast('Error', 'Network error. Please try again later.', 'error', 4000);
+                    });
+                });
+            </script>
+
+
             <!-- Footer Bottom -->
             <div class="copyright pt-4 border-top border-secondary">
                 <div class="row align-items-center">

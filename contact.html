@@ -106,31 +106,31 @@
                         tabindex="0"></iframe>
                 </div>
                 <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
-                    <form>
+                    <form id="contactPageForm">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="contact_name" placeholder="Your Name" required>
+                                    <label for="contact_name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" id="contact_page_email" placeholder="Your Email" required>
+                                    <label for="contact_page_email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
+                                    <input type="text" class="form-control" id="contact_page_subject" placeholder="Subject" required>
+                                    <label for="contact_page_subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                        style="height: 250px"></textarea>
-                                    <label for="message">Message</label>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="contact_page_message"
+                                        style="height: 250px" required></textarea>
+                                    <label for="contact_page_message">Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -138,6 +138,70 @@
                             </div>
                         </div>
                     </form>
+
+                    <script>
+                        // Function to get CSRF token from cookies
+                        function getCookie(name) {
+                            let cookieValue = null;
+                            if (document.cookie && document.cookie !== '') {
+                                const cookies = document.cookie.split(';');
+                                for (let i = 0; i < cookies.length; i++) {
+                                    const cookie = cookies[i].trim();
+                                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                        break;
+                                    }
+                                }
+                            }
+                            return cookieValue;
+                        }
+
+                        document.getElementById('contactPageForm').addEventListener('submit', async function(e) {
+                            e.preventDefault();
+
+                            const name = document.getElementById('contact_name').value.trim();
+                            const email = document.getElementById('contact_page_email').value.trim();
+                            const subject = document.getElementById('contact_page_subject').value.trim();
+                            const message = document.getElementById('contact_page_message').value.trim();
+                            const csrftoken = getCookie('csrftoken');
+
+                            if (!name || !email || !subject || !message) {
+                                showToast('Validation Error', 'Please fill in all fields.', 'warning', 3000);
+                                return;
+                            }
+
+                            try {
+                                const response = await fetch("http://127.0.0.1:8000/api/contact/", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "X-CSRFToken": csrftoken,
+                                    },
+                                    body: JSON.stringify({ name, email, subject, message }),
+                                    credentials: 'include'
+                                });
+
+                                const result = await response.json();
+                                
+                                if (response.ok) {
+                                    showSuccessModal(
+                                        'Message Sent Successfully!', 
+                                        'Thank you for contacting us. We will respond to your inquiry shortly.',
+                                        function() {
+                                            document.getElementById('contactPageForm').reset();
+                                        }
+                                    );
+                                    
+                                    showToast('Success', result.message || 'Your message has been sent successfully.', 'success', 4000);
+                                } else {
+                                    showToast('Error', result.message || 'Failed to send message. Please try again.', 'error', 4000);
+                                }
+                            } catch (error) {
+                                console.error('Error:', error);
+                                showToast('Error', 'Network error. Please check your connection and try again.', 'error', 4000);
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </div>
@@ -196,10 +260,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Business Hours & Newsletter Section -->
+
+             <!-- Business Hours & Newsletter Section -->
             <div class="row g-5 py-4 border-top border-secondary">
                 <div class="col-lg-6 col-md-6">
-                    <h5 class="text-light mb-3"><i class="fa fa-clock text-primary me-2"></i>Business Hours</h5>
+                    <h5 class="text-light mb-3">
+                        <i class="fa fa-clock text-primary me-2"></i>Business Hours
+                    </h5>
                     <div class="row">
                         <div class="col-sm-6">
                             <p class="text-light mb-1"><strong>Monday - Friday</strong></p>
@@ -213,16 +280,76 @@
                     <p class="text-secondary mt-2"><strong>Sunday:</strong> Closed</p>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <h5 class="text-light mb-3"><i class="fa fa-envelope text-primary me-2"></i>Newsletter</h5>
+                    <h5 class="text-light mb-3">
+                        <i class="fa fa-envelope text-primary me-2"></i>Newsletter
+                    </h5>
                     <p class="text-light mb-3">Subscribe to our newsletter for updates on new features and special offers.</p>
-                    <form class="footer-newsletter">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                            <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i></button>
-                        </div>
-                    </form>
+                        <form class="footer-newsletter" id="newsletterForm">
+                            <div class="input-group">
+                                <input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email" required>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+
                 </div>
             </div>
+
+            <script>
+                // Function to get CSRF token from cookies
+                function getCookie(name) {
+                    let cookieValue = null;
+                    if (document.cookie && document.cookie !== '') {
+                        const cookies = document.cookie.split(';');
+                        for (let i = 0; i < cookies.length; i++) {
+                            const cookie = cookies[i].trim();
+                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                break;
+                            }
+                        }
+                    }
+                    return cookieValue;
+                }
+
+                document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    let email = document.getElementById('newsletterEmail').value;
+                    const csrftoken = getCookie('csrftoken');
+
+                    if (!email) {
+                        showToast('Validation Error', 'Please enter a valid email address.', 'warning', 3000);
+                        return;
+                    }
+
+                    fetch("http://127.0.0.1:8000/api/subscribe/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRFToken": csrftoken,
+                        },
+                        body: JSON.stringify({ email: email }),
+                        credentials: 'include'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            showToast('Subscribed!', 'Thank you for subscribing to our newsletter.', 'success', 4000);
+                            document.getElementById('newsletterEmail').value = "";
+                        } else {
+                            showToast('Error', data.message || 'Failed to subscribe. Please try again.', 'error', 4000);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showToast('Error', 'Network error. Please try again later.', 'error', 4000);
+                    });
+                });
+            </script>
+
+
             <!-- Footer Bottom -->
             <div class="copyright pt-4 border-top border-secondary">
                 <div class="row align-items-center">

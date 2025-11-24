@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Product Details - Softwiz Pro</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Product Detail Page Styles */
+        .product-hero-banner {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+        }
+
+        .product-hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+        }
+
+        .product-hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: flex-end;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 60px 40px 40px;
+            color: white;
+        }
+
+        .product-hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Product Details Section */
+        .product-details-section {
+            padding: 60px 40px;
+            background: #f8f9fa;
+        }
+
+        .product-overview {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-overview h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .product-overview h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0d6efd, #ffc107);
+            border-radius: 2px;
+        }
+
+        .product-overview p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Features Section */
+        .product-features-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-features-section h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 35px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .product-features-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0d6efd, #ffc107);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.15);
+            border-left-color: #ffc107;
+        }
+
+        .feature-card-icon {
+            font-size: 40px;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h5 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Benefits Section */
+        .product-benefits-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-benefits-section h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 35px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .product-benefits-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0d6efd, #ffc107);
+            border-radius: 2px;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: #e9ecef;
+            padding-left: 25px;
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+        }
+
+        .benefit-content h5 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .benefit-content p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .product-cta-section {
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            padding: 60px 40px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .product-cta-section h2 {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .product-cta-section p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product-cta-buttons .btn {
+            padding: 15px 40px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+        .product-cta-buttons .btn-light {
+            background: white;
+            color: #0d6efd;
+        }
+
+        .product-cta-buttons .btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+
+        .product-cta-buttons .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .product-cta-buttons .btn-outline-light:hover {
+            background: white;
+            color: #0d6efd;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Breadcrumb */
+        .product-breadcrumb {
+            padding: 20px 40px;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-breadcrumb a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .product-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-hero-banner {
+                height: 300px;
+            }
+
+            .product-hero-content {
+                padding: 40px 20px 20px;
+            }
+
+            .product-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .product-details-section {
+                padding: 40px 20px;
+            }
+
+            .product-overview,
+            .product-features-section,
+            .product-benefits-section {
+                padding: 30px 20px;
+            }
+
+            .product-overview h2,
+            .product-features-section h2,
+            .product-benefits-section h2 {
+                font-size: 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .benefits-list {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .product-cta-section {
+                padding: 40px 20px;
+            }
+
+            .product-cta-section h2 {
+                font-size: 24px;
+            }
+
+            .product-cta-buttons {
+                flex-direction: column;
+            }
+
+            .product-cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid px-0 wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+            <div class="container">
+                <a class="navbar-brand d-none d-lg-block" href="index.html"><img src="img/logo.png" alt="softwizpro"></a>
+                <a class="navbar-brand d-lg-none" href="index.html"><img src="img/logo.png" alt="softwizpro" style="height:46px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="Products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Packages.html">Packages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-outline-primary me-2 d-none d-lg-inline" href="contact.html">Contact</a>
+                        <a class="btn btn-primary d-none d-lg-inline" href="contact.html">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Breadcrumb -->
+    <div class="product-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#products">Products</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-title">Product Name</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="product-hero-banner">
+        <img id="hero-image" src="img/RetailSystem.png" alt="Product Image">
+        <div class="product-hero-content">
+            <h1 id="hero-title">Product Name</h1>
+        </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details-section">
+        <div class="container">
+            <!-- Overview -->
+            <div class="product-overview wow fadeIn" data-wow-delay="0.1s">
+                <h2>Product Overview</h2>
+                <p id="product-description">Product description will appear here...</p>
+            </div>
+
+            <!-- Features -->
+            <div class="product-features-section wow fadeIn" data-wow-delay="0.2s">
+                <h2>Key Capabilities</h2>
+                <div class="features-grid" id="features-grid">
+                    <!-- Features will be populated here -->
+                </div>
+            </div>
+
+            <!-- Benefits/Specs -->
+            <div class="product-benefits-section wow fadeIn" data-wow-delay="0.3s">
+                <h2>Why Choose This Product</h2>
+                <div class="benefits-list" id="benefits-list">
+                    <!-- Benefits will be populated here -->
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="product-cta-section wow fadeIn" data-wow-delay="0.4s">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Get started with our comprehensive solution today. Our team is ready to help you succeed.</p>
+                <div class="product-cta-buttons">
+                    <a href="contact.html" class="btn btn-light" hidden>Request a Demo</a>
+                    <a href="contact.html" class="btn btn-outline-light">Contact Our Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Products -->
+    <div style="padding: 40px; text-align: center; background: white;">
+        <a href="index.html#products" class="btn btn-primary"><i class="fas fa-arrow-left me-2"></i>Back to Products</a>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-about">
+                        <h4 class="text-light mb-4">
+                            <i class="fa fa-cube text-primary me-2"></i>Softwiz Pro
+                        </h4>
+                        <p class="text-light mb-3">Empowering businesses with smart software solutions. We believe every business deserves efficient, reliable tools for growth.</p>
+                        <div class="footer-social d-flex">
+                            <a class="btn btn-square btn-primary me-2" href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary me-2" href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary me-2" href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-primary me-2" href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">
+                        <i class="fa fa-link text-primary me-2"></i>Quick Links
+                    </h4>
+                    <div class="footer-links">
+                        <a class="btn btn-link text-light d-block text-start" href="index.html">Home</a>
+                        <a class="btn btn-link text-light d-block text-start" href="about.html">About</a>
+                        <a class="btn btn-link text-light d-block text-start" href="Products.html">Products</a>
+                        <a class="btn btn-link text-light d-block text-start" href="Packages.html">Packages</a>
+                        <a class="btn btn-link text-light d-block text-start" href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">
+                        <i class="fa fa-cogs text-primary me-2"></i>Services
+                    </h4>
+                    <div class="footer-links">
+                        <p class="btn btn-link text-light d-block text-start mb-1">Point of Sale</p>
+                        <p class="btn btn-link text-light d-block text-start mb-1">Stock Handling</p>
+                        <p class="btn btn-link text-light d-block text-start mb-1">Accounting</p>
+                        <p class="btn btn-link text-light d-block text-start mb-1">Reports & Analytics</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">
+                        <i class="fa fa-phone text-primary me-2"></i>Contact Info
+                    </h4>
+                    <div class="footer-contact">
+                        <p class="text-light mb-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Nairobi, Kenya</p>
+                        <p class="text-light mb-2"><i class="fa fa-envelope text-primary me-2"></i><a href="mailto:info@softwizpro.com" class="text-light">info@softwizpro.com</a></p>
+                        <p class="text-light mb-0"><i class="fa fa-phone text-primary me-2"></i><a href="tel:+254700000000" class="text-light">+254 700 000 000</a></p>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-light mb-0">&copy; <span id="currentYear"></span> Softwiz Pro. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-light mb-0">Designed & Developed by <a class="text-primary" href="#">Softwiz Pro</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Product data
+        const products = {
+            'Retail Management System': {
+                image: 'img/RetailSystem.png',
+                description: 'Our Retail Management System is specifically designed for retail businesses of all sizes. It combines a powerful POS system with comprehensive inventory management, customer loyalty programs, and detailed sales analytics. Manage multiple stores from a central dashboard, track real-time sales performance, and make informed decisions to drive profitability.',
+                features: [
+                    { title: 'Multi-Store Management', description: 'Centralize operations across all your retail locations' },
+                    { title: 'Intelligent Inventory', description: 'Smart inventory tracking and automated reorder management' },
+                    { title: 'Customer Loyalty Programs', description: 'Build customer relationships with reward programs' },
+                    { title: 'Real-Time Sales Analytics', description: 'Deep insights into sales performance and trends' },
+                    { title: 'Employee Management', description: 'Complete staff scheduling and performance tracking' },
+                    { title: 'Barcode Integration', description: 'Streamlined product tracking and management' }
+                ],
+                capabilities: [
+                    { icon: 'fa-store', title: 'Multi-Location Support', desc: 'Manage unlimited store locations from one dashboard' },
+                    { icon: 'fa-chart-line', title: 'Sales Analytics', desc: 'Real-time insights into your business performance' },
+                    { icon: 'fa-boxes', title: 'Inventory Control', desc: 'Automated inventory tracking and management' },
+                    { icon: 'fa-users-cog', title: 'Staff Management', desc: 'Manage employees, shifts, and performance' },
+                    { icon: 'fa-credit-card', title: 'Payment Processing', desc: 'Accept multiple payment methods securely' },
+                    { icon: 'fa-mobile-alt', title: 'Mobile Ready', desc: 'Works seamlessly on all devices' }
+                ]
+            },
+            'Bar and Restaurant System': {
+                image: 'img/Bar and Restaurant.png',
+                description: 'Streamline your bar and restaurant operations with our specialized POS system. Manage table orders, kitchen workflows, and customer payments seamlessly. Track ingredient costs, manage staff shifts, and optimize menu performance. Reduce wait times, improve accuracy, and enhance customer satisfaction with our intuitive interface and powerful backend management tools.',
+                features: [
+                    { title: 'Table Management System', description: 'Efficient table seating and order management' },
+                    { title: 'Kitchen Order Display', description: 'Real-time kitchen order tracking and preparation status' },
+                    { title: 'Staff Shift Scheduling', description: 'Automated staff scheduling and management' },
+                    { title: 'Menu Performance Analytics', description: 'Track popular items and optimize your menu' },
+                    { title: 'Ingredient Cost Tracking', description: 'Monitor food costs and minimize waste' },
+                    { title: 'Customer Feedback Integration', description: 'Collect and analyze customer reviews and feedback' }
+                ],
+                capabilities: [
+                    { icon: 'fa-chair', title: 'Table Management', desc: 'Optimize seating and order management' },
+                    { icon: 'fa-utensils', title: 'Menu Management', desc: 'Create and manage your menu effortlessly' },
+                    { icon: 'fa-clock', title: 'Order Timing', desc: 'Track order preparation times accurately' },
+                    { icon: 'fa-percent', title: 'Promotions', desc: 'Create and manage special offers and discounts' },
+                    { icon: 'fa-receipt', title: 'Bill Management', desc: 'Split bills and handle complex transactions' },
+                    { icon: 'fa-star', title: 'Ratings & Reviews', description: 'Manage customer feedback and ratings' }
+                ]
+            },
+            'Payroll System': {
+                image: 'img/Payroll.png',
+                description: 'Automate your payroll management with our comprehensive Payroll System. Calculate salaries with various pay structures, manage tax deductions, and generate payment reports automatically. Maintain detailed employee records, track leave and attendance, and ensure compliance with labor regulations. Reduce administrative burden and eliminate payroll errors with our secure, reliable system.',
+                features: [
+                    { title: 'Automated Salary Calculation', description: 'Precise salary calculations with various pay structures' },
+                    { title: 'Tax & Deduction Management', description: 'Automatic tax calculation and deduction tracking' },
+                    { title: 'Leave & Attendance Tracking', description: 'Comprehensive leave and attendance management' },
+                    { title: 'Employee Self-Service Portal', description: 'Allow employees to view payslips and personal info' },
+                    { title: 'Compliance Reporting', description: 'Generate compliance reports for regulatory bodies' },
+                    { title: 'Bulk Payment Processing', description: 'Process payments to multiple employees at once' }
+                ],
+                capabilities: [
+                    { icon: 'fa-calculator', title: 'Salary Calculation', desc: 'Automated and accurate salary computations' },
+                    { icon: 'fa-file-invoice', title: 'Payslip Generation', desc: 'Professional payslips for all employees' },
+                    { icon: 'fa-calendar-check', title: 'Attendance Tracking', desc: 'Monitor employee attendance and leave' },
+                    { icon: 'fa-percent', title: 'Tax Management', desc: 'Automatic tax calculation and reporting' },
+                    { icon: 'fa-bank', title: 'Bank Integration', desc: 'Direct deposit and payment integration' },
+                    { icon: 'fa-chart-pie', title: 'Analytics', desc: 'Payroll analytics and reporting' }
+                ]
+            }
+        };
+
+        // Get product from URL parameter
+        function getProductFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('product') || 'Retail Management System';
+        }
+
+        // Load product details
+        function loadProductDetails() {
+            const productName = getProductFromURL();
+            const product = products[productName];
+
+            if (product) {
+                // Update breadcrumb and titles
+                document.getElementById('breadcrumb-title').textContent = productName;
+                document.getElementById('hero-title').textContent = productName;
+                document.getElementById('hero-image').src = product.image;
+                document.getElementById('product-description').textContent = product.description;
+
+                // Load features
+                const featuresGrid = document.getElementById('features-grid');
+                featuresGrid.innerHTML = '';
+                product.features.forEach((feature, index) => {
+                    const icons = ['fa-bolt', 'fa-box', 'fa-gift', 'fa-chart-bar', 'fa-users', 'fa-barcode'];
+                    const featureHTML = `
+                        <div class="feature-card" style="animation-delay: ${index * 0.1}s;">
+                            <div class="feature-card-icon">
+                                <i class="fas ${icons[index % icons.length]}"></i>
+                            </div>
+                            <h5>${feature.title}</h5>
+                            <p>${feature.description}</p>
+                        </div>
+                    `;
+                    featuresGrid.innerHTML += featureHTML;
+                });
+
+                // Load benefits
+                const benefitsList = document.getElementById('benefits-list');
+                benefitsList.innerHTML = '';
+                product.capabilities.forEach((capability, index) => {
+                    const benefitHTML = `
+                        <div class="benefit-item" style="animation-delay: ${index * 0.1}s;">
+                            <div class="benefit-icon">
+                                <i class="fas ${capability.icon}"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h5>${capability.title}</h5>
+                                <p>${capability.desc}</p>
+                            </div>
+                        </div>
+                    `;
+                    benefitsList.innerHTML += benefitHTML;
+                });
+
+                // Initialize WOW.js for animations
+                new WOW().init();
+            }
+        }
+
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Load product details when page loads
+        document.addEventListener('DOMContentLoaded', loadProductDetails);
+
+        // Spinner
+        setTimeout(function () {
+            if (document.getElementById('spinner')) {
+                document.getElementById('spinner').classList.remove('show');
+            }
+        }, 1);
+    </script>
+</body>
+
+</html>

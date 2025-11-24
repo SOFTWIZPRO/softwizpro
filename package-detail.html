@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Package Details - Softwiz Pro</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Package Detail Page Styles */
+
+        /* Package Details Section */
+        .package-details-section {
+            padding: 60px 40px;
+            background: #f8f9fa;
+        }
+
+        .package-description {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .package-description h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .package-description h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0d6efd, #ffc107);
+            border-radius: 2px;
+        }
+
+        .package-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Features Section */
+        .package-features-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .package-features-section h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 35px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .package-features-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0d6efd, #ffc107);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.15);
+            border-left-color: #ffc107;
+        }
+
+        .feature-item-icon {
+            font-size: 32px;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Target Audience Section */
+        .package-target-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 4px solid #0d6efd;
+        }
+
+        .package-target-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .package-target-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .package-cta-section {
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            padding: 60px 40px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .package-cta-section h2 {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .package-cta-section p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .package-cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .package-cta-buttons .btn {
+            padding: 15px 40px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+        .package-cta-buttons .btn-light {
+            background: white;
+            color: #0d6efd;
+        }
+
+        .package-cta-buttons .btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+
+        .package-cta-buttons .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .package-cta-buttons .btn-outline-light:hover {
+            background: white;
+            color: #0d6efd;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Breadcrumb */
+        .package-breadcrumb {
+            padding: 20px 40px;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .package-breadcrumb a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .package-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .package-details-section {
+                padding: 40px 20px;
+            }
+
+            .package-description,
+            .package-features-section,
+            .package-target-section {
+                padding: 30px 20px;
+            }
+
+            .package-description h2,
+            .package-features-section h2 {
+                font-size: 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .package-cta-section {
+                padding: 40px 20px;
+            }
+
+            .package-cta-section h2 {
+                font-size: 24px;
+            }
+
+            .package-cta-buttons {
+                flex-direction: column;
+            }
+
+            .package-cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid px-0 wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+            <div class="container">
+                <a class="navbar-brand d-none d-lg-block" href="index.html"><img src="img/logo.png" alt="softwizpro"></a>
+                <a class="navbar-brand d-lg-none" href="index.html"><img src="img/logo.png" alt="softwizpro" style="height:46px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="Packages.html">Packages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-outline-primary me-2 d-none d-lg-inline" href="contact.html">Contact</a>
+                        <a class="btn btn-primary d-none d-lg-inline" href="contact.html">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Breadcrumb -->
+    <div class="package-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#packages">Packages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-title">Package Name</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Package Details -->
+    <div class="package-details-section">
+        <div class="container">
+            <!-- Description -->
+            <div class="package-description wow fadeIn" data-wow-delay="0.1s">
+                <h2>About This Package</h2>
+                <p id="package-description">Package description will appear here...</p>
+            </div>
+
+            <!-- Target Audience -->
+            <div class="package-target-section wow fadeIn" data-wow-delay="0.2s">
+                <h2><i class="fas fa-bullseye text-primary me-2"></i>Who Is This For?</h2>
+                <p id="package-target">Target audience information will appear here...</p>
+            </div>
+
+            <!-- Features -->
+            <div class="package-features-section wow fadeIn" data-wow-delay="0.3s">
+                <h2>Package Features</h2>
+                <div class="features-grid" id="features-grid">
+                    <!-- Features will be populated here -->
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="package-cta-section wow fadeIn" data-wow-delay="0.4s">
+                <h2>Ready to Get Started?</h2>
+                <p>Choose this package and transform your business operations today. Our team is here to support your success.</p>
+                <div class="package-cta-buttons">
+                    <a href="contact.html" class="btn btn-light">Subscribe Now</a>
+                    <a href="contact.html" class="btn btn-outline-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Packages -->
+    <div style="padding: 40px; text-align: center; background: white;">
+        <a href="index.html#packages" class="btn btn-primary"><i class="fas fa-arrow-left me-2"></i>Back to Packages</a>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-about">
+                        <h4 class="text-light mb-4">
+                            <i class="fa fa-cube text-primary me-2"></i>Softwiz Pro
+                        </h4>
+                        <p class="text-light mb-3">Empowering businesses with smart software solutions. We believe every business deserves efficient, reliable tools for growth.</p>
+                        <div class="footer-social d-flex">
+                            <a class="btn btn-square btn-primary me-2" href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary me-2" href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary me-2" href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-primary me-2" href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">
+                        <i class="fa fa-link text-primary me-2"></i>Quick Links
+                    </h4>
+                    <div class="footer-links">
+                        <a class="btn btn-link text-light d-block text-start" href="index.html">Home</a>
+                        <a class="btn btn-link text-light d-block text-start" href="about.html">About</a>
+                        <a class="btn btn-link text-light d-block text-start" href="Products.html">Products</a>
+                        <a class="btn btn-link text-light d-block text-start" href="Packages.html">Packages</a>
+                        <a class="btn btn-link text-light d-block text-start" href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">
+                        <i class="fa fa-cogs text-primary me-2"></i>Services
+                    </h4>
+                    <div class="footer-links">
+                        <p class="btn btn-link text-light d-block text-start mb-1">Point of Sale</p>
+                        <p class="btn btn-link text-light d-block text-start mb-1">Stock Handling</p>
+                        <p class="btn btn-link text-light d-block text-start mb-1">Accounting</p>
+                        <p class="btn btn-link text-light d-block text-start mb-1">Reports & Analytics</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">
+                        <i class="fa fa-phone text-primary me-2"></i>Contact Info
+                    </h4>
+                    <div class="footer-contact">
+                        <p class="text-light mb-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Nairobi, Kenya</p>
+                        <p class="text-light mb-2"><i class="fa fa-envelope text-primary me-2"></i><a href="mailto:info@softwizpro.com" class="text-light">info@softwizpro.com</a></p>
+                        <p class="text-light mb-0"><i class="fa fa-phone text-primary me-2"></i><a href="tel:+254700000000" class="text-light">+254 700 000 000</a></p>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-light mb-0">&copy; <span id="currentYear"></span> Softwiz Pro. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-light mb-0">Designed & Developed by <a class="text-primary" href="#">Softwiz Pro</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Package data
+        const packages = {
+            'Lite': {
+                subtitle: 'Perfect for small businesses starting out',
+                description: 'Our Lite package is perfect for small businesses just starting their digital transformation journey. It includes essential features to get your business running efficiently without unnecessary complexity.',
+                target: 'Ideal for small businesses, startups, and single-location shops that need core POS functionality to get started.',
+                features: [
+                    { icon: 'fa-cash-register', title: 'Basic POS System', desc: 'Essential point of sale functionality' },
+                    { icon: 'fa-user', title: 'Single User Account', desc: 'One primary user access' },
+                    { icon: 'fa-boxes', title: 'Essential Inventory', desc: 'Basic inventory tracking' },
+                    { icon: 'fa-chart-simple', title: 'Daily Sales Reports', desc: 'Daily sales summaries' },
+                    { icon: 'fa-envelope', title: 'Email Support', desc: 'Standard email support' },
+                    { icon: 'fa-calendar', title: '30-Day Backup', desc: '30 days of data backup' }
+                ]
+            },
+            'Advance': {
+                subtitle: 'Enhanced features for growing businesses',
+                description: 'Our Advance package is designed for growing businesses that need more powerful features and scalability. It includes advanced inventory management, comprehensive reporting, and customer relationship tools to support your expansion.',
+                target: 'Perfect for growing businesses with multiple departments and 2-5 retail locations that need advanced functionality.',
+                features: [
+                    { icon: 'fa-store', title: 'Advanced POS System', desc: 'Full-featured point of sale' },
+                    { icon: 'fa-users', title: 'Multi-User Accounts', desc: 'Multiple user access and roles' },
+                    { icon: 'fa-cube', title: 'Advanced Inventory', desc: 'Smart inventory control' },
+                    { icon: 'fa-file-csv', title: 'Custom Reports', desc: 'Customizable reporting' },
+                    { icon: 'fa-gift', title: 'Loyalty Program', desc: 'Customer loyalty features' },
+                    { icon: 'fa-phone', title: 'Phone & Email Support', desc: 'Priority support options' }
+                ]
+            },
+            'Pro': {
+                subtitle: 'Advanced analytics and automation for enterprises',
+                description: 'Our Pro package is built for established businesses that demand advanced features, detailed analytics, and automation capabilities. It provides comprehensive operational control and strategic insights to optimize your business.',
+                target: 'Designed for established businesses with enterprise operations and 5-20 retail locations.',
+                features: [
+                    { icon: 'fa-building', title: 'Enterprise POS System', desc: 'Full enterprise solution' },
+                    { icon: 'fa-infinity', title: 'Unlimited Users', desc: 'Unlimited user accounts' },
+                    { icon: 'fa-chart-bar', title: 'Advanced Analytics', desc: 'Deep business insights' },
+                    { icon: 'fa-cog', title: 'Automation Workflows', desc: 'Automated business processes' },
+                    { icon: 'fa-gauge', title: 'Real-Time Dashboards', desc: 'Live business dashboards' },
+                    { icon: 'fa-star', title: 'Priority Support', desc: '24/7 priority support' }
+                ]
+            },
+            'Enterprise': {
+                subtitle: 'Complete customized solution for large organizations',
+                description: 'Our Enterprise package is the ultimate solution for large organizations with complex requirements. It delivers full customization, unlimited integrations, and dedicated premium support to meet your unique business needs.',
+                target: 'For large enterprises with complex operations and 20+ retail locations requiring fully customized solutions.',
+                features: [
+                    { icon: 'fa-hammer', title: 'Fully Customized', desc: 'Custom-built solution' },
+                    { icon: 'fa-palette', title: 'White-Label Options', desc: 'Brand your own solution' },
+                    { icon: 'fa-puzzle-piece', title: 'API Integrations', desc: 'Full API access' },
+                    { icon: 'fa-user-tie', title: 'Dedicated Manager', desc: 'Personal account manager' },
+                    { icon: 'fa-headset', title: '24/7 Support', desc: 'Round the clock support' },
+                    { icon: 'fa-cloud', title: 'Flexible Deployment', desc: 'Cloud or on-premise' }
+                ]
+            }
+        };
+
+        // Get package from URL parameter
+        function getPackageFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('package') || 'Lite';
+        }
+
+        // Load package details
+        function loadPackageDetails() {
+            const packageName = getPackageFromURL();
+            const pkg = packages[packageName];
+
+            if (pkg) {
+                // Update breadcrumb and titles
+                document.getElementById('breadcrumb-title').textContent = packageName + ' Package';
+                document.getElementById('package-description').textContent = pkg.description;
+                document.getElementById('package-target').textContent = pkg.target;
+
+                // Load features
+                const featuresGrid = document.getElementById('features-grid');
+                featuresGrid.innerHTML = '';
+                pkg.features.forEach((feature, index) => {
+                    const featureHTML = `
+                        <div class="feature-item" style="animation-delay: ${index * 0.1}s;">
+                            <div class="feature-item-icon">
+                                <i class="fas ${feature.icon}"></i>
+                            </div>
+                            <h5>${feature.title}</h5>
+                            <p>${feature.desc}</p>
+                        </div>
+                    `;
+                    featuresGrid.innerHTML += featureHTML;
+                });
+
+                // Initialize WOW.js for animations
+                new WOW().init();
+            }
+        }
+
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Load package details when page loads
+        document.addEventListener('DOMContentLoaded', loadPackageDetails);
+
+        // Spinner
+        setTimeout(function () {
+            if (document.getElementById('spinner')) {
+                document.getElementById('spinner').classList.remove('show');
+            }
+        }, 1);
+    </script>
+</body>
+
+</html>
