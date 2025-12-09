@@ -170,7 +170,7 @@
     justify-content: center;
     font-size: 22px;
     color: var(--bs-dark);
-    background: var(--bs-primary);
+    background: #28a745;
 }
 
 /* Show carousel navigation only on md screens and above */
@@ -192,7 +192,7 @@
 .page-header .breadcrumb-item,
 .page-header .breadcrumb-item a {
     font-size: 18px;
-    color: var(--bs-primary);
+    color: #ffc107;
 }
 
 .page-header .breadcrumb-item.active {
@@ -305,7 +305,7 @@
     height: 0px;
     top: 5px;
     left: -40px;
-    border-top: 2px solid var(--bs-primary);
+    border-top: 2px solid #ffc107;
     z-index: -1;
 }
 
@@ -316,7 +316,7 @@
     height: 0px;
     bottom: 6px;
     left: -60px;
-    border-bottom: 2px solid var(--bs-primary);
+    border-bottom: 2px solid #ffc107;
     z-index: -1;
 }
 
@@ -644,7 +644,7 @@
 /* Nav polish moved from inline styles */
 .navbar-brand img{height:56px;}
 .nav-link{font-weight:600; color:#333 !important; position:relative}
-.nav-link::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-6px;width:0;height:2px;background:var(--bs-primary);transition:width .25s ease}
+.nav-link::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-6px;width:0;height:2px;background:#ffc107;transition:width .25s ease}
 .nav-link:hover::after{width:60%}
 .navbar-nav .nav-item .nav-link.active::after{width:60%}
 @media (max-width:991px){ .navbar-brand img{height:46px;} }
@@ -688,7 +688,7 @@
 }
 
 .footer .footer-links a:hover {
-    color: var(--bs-primary);
+    color: #28a745;
     transform: translateX(5px);
 }
 
@@ -759,7 +759,7 @@
 }
 
 .footer .footer-bottom-links a:hover {
-    color: var(--bs-primary) !important;
+    color: #28a745 !important;
 }
 
 @media (max-width: 768px) {
@@ -1956,5 +1956,134 @@
         width: 40px;
         height: 40px;
         font-size: 28px;
+    }
+}
+
+/* ===== Alternative Contact Methods ===== */
+.contact-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.05) 0%, rgba(255, 193, 7, 0.05) 100%);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.contact-card:hover {
+    border-color: #28a745;
+    box-shadow: 0 12px 30px rgba(40, 167, 69, 0.15);
+    transform: translateY(-8px);
+}
+
+.contact-card:hover::before {
+    left: 0;
+}
+
+.contact-card i {
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover i {
+    transform: scale(1.15) rotate(-5deg);
+    color: #28a745;
+}
+
+.contact-card h6 {
+    font-weight: 700;
+    color: #333;
+    font-size: 18px;
+}
+
+.contact-card p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.contact-card .btn {
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.contact-card .btn-outline-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.2);
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 30px !important;
+    }
+    
+    .contact-card i {
+        font-size: 2rem !important;
+    }
+    
+    .contact-card h6 {
+        font-size: 16px;
+    }
+}
+
+/* ===== Package Cards Optimization ===== */
+.donation-item {
+    transition: all 0.3s ease;
+    padding: 20px !important;
+}
+
+.donation-item .donation-detail {
+    width: 100%;
+}
+
+.donation-item .donation-detail h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.donation-item .donation-detail p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    min-height: 70px;
+    overflow: hidden;
+}
+
+.donation-item .donation-detail img {
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.donation-item .btn {
+    font-size: 15px;
+    padding: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .donation-item {
+        padding: 15px !important;
+    }
+    
+    .donation-item .donation-detail img {
+        height: 150px;
+    }
+    
+    .donation-item .donation-detail h3 {
+        font-size: 18px;
+    }
+    
+    .donation-item .donation-detail p {
+        font-size: 13px;
+        min-height: 50px;
     }
 }

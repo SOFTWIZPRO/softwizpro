@@ -104,17 +104,20 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
         .feature-item {
-            padding: 25px;
+            padding: 30px;
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             border-radius: 10px;
             border-left: 4px solid #0d6efd;
             transition: all 0.3s ease;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .feature-item:hover {
@@ -124,22 +127,26 @@
         }
 
         .feature-item-icon {
-            font-size: 32px;
+            font-size: 36px;
             color: #0d6efd;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            flex-shrink: 0;
         }
 
         .feature-item h5 {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 700;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            flex-grow: 0;
         }
 
         .feature-item p {
-            font-size: 13px;
+            font-size: 14px;
             color: #666;
             margin: 0;
+            line-height: 1.6;
+            flex-grow: 1;
         }
 
         /* Target Audience Section */
@@ -470,54 +477,56 @@
         const packages = {
             'Lite': {
                 subtitle: 'Perfect for small businesses starting out',
-                description: 'Our Lite package is perfect for small businesses just starting their digital transformation journey. It includes essential features to get your business running efficiently without unnecessary complexity.',
-                target: 'Ideal for small businesses, startups, and single-location shops that need core POS functionality to get started.',
+                description: 'Our Lite package is perfect for small businesses just starting their digital transformation journey. Make sales, receive orders, manage inventory, add and remove items, manage customers and suppliers, and generate comprehensive reports - all with single-user access.',
+                target: 'Ideal for small businesses, startups, and single-location shops that need core functionality to get started.',
                 features: [
-                    { icon: 'fa-cash-register', title: 'Basic POS System', desc: 'Essential point of sale functionality' },
-                    { icon: 'fa-user', title: 'Single User Account', desc: 'One primary user access' },
-                    { icon: 'fa-boxes', title: 'Essential Inventory', desc: 'Basic inventory tracking' },
-                    { icon: 'fa-chart-simple', title: 'Daily Sales Reports', desc: 'Daily sales summaries' },
-                    { icon: 'fa-envelope', title: 'Email Support', desc: 'Standard email support' },
-                    { icon: 'fa-calendar', title: '30-Day Backup', desc: '30 days of data backup' }
+                    { icon: 'fa-cash-register', title: 'Sales & Orders', desc: 'Make sales and receive orders' },
+                    { icon: 'fa-cube', title: 'Inventory Management', desc: 'Add and remove items from inventory' },
+                    { icon: 'fa-users', title: 'Customer Management', desc: 'Manage customers and suppliers' },
+                    { icon: 'fa-user', title: 'Single User', desc: 'Single user access account' },
+                    { icon: 'fa-chart-bar', title: 'Sales Reports', desc: 'Generate total and periodic sales reports' },
+                    { icon: 'fa-file-lines', title: 'Detailed Reports', desc: 'Reports for items and customers' }
                 ]
             },
-            'Advance': {
-                subtitle: 'Enhanced features for growing businesses',
-                description: 'Our Advance package is designed for growing businesses that need more powerful features and scalability. It includes advanced inventory management, comprehensive reporting, and customer relationship tools to support your expansion.',
-                target: 'Perfect for growing businesses with multiple departments and 2-5 retail locations that need advanced functionality.',
+            'Advanced': {
+                subtitle: 'Comprehensive suite for growing businesses',
+                description: 'Our Advanced package includes everything in Lite, plus production management, full accounting capabilities, accounts payable tracking, multi-user access, profit & loss reports, and advanced analytics to support your business growth.',
+                target: 'Perfect for growing businesses with multiple departments and 2-5 locations that need advanced functionality.',
                 features: [
-                    { icon: 'fa-store', title: 'Advanced POS System', desc: 'Full-featured point of sale' },
-                    { icon: 'fa-users', title: 'Multi-User Accounts', desc: 'Multiple user access and roles' },
-                    { icon: 'fa-cube', title: 'Advanced Inventory', desc: 'Smart inventory control' },
-                    { icon: 'fa-file-csv', title: 'Custom Reports', desc: 'Customizable reporting' },
-                    { icon: 'fa-gift', title: 'Loyalty Program', desc: 'Customer loyalty features' },
-                    { icon: 'fa-phone', title: 'Phone & Email Support', desc: 'Priority support options' }
+                    { icon: 'fa-boxes-stacked', title: 'Sales & Orders', desc: 'Complete sales and order management' },
+                    { icon: 'fa-cube', title: 'Inventory Management', desc: 'Add, remove, and track items' },
+                    { icon: 'fa-users', title: 'Multi-User Access', desc: 'Multiple team members can use the system' },
+                    { icon: 'fa-industry', title: 'Production Management', desc: 'Manage production workflows' },
+                    { icon: 'fa-chart-line', title: 'Full Accounting', desc: 'Complete accounting capabilities' },
+                    { icon: 'fa-receipt', title: 'Accounts Payable', desc: 'Track and manage vendor payments' },
+                    { icon: 'fa-chart-pie', title: 'Profit & Loss Reports', desc: 'Detailed P&L statements' },
+                    { icon: 'fa-analytics', title: 'Advanced Analytics', desc: 'Business intelligence and insights' }
                 ]
             },
             'Pro': {
-                subtitle: 'Advanced analytics and automation for enterprises',
-                description: 'Our Pro package is built for established businesses that demand advanced features, detailed analytics, and automation capabilities. It provides comprehensive operational control and strategic insights to optimize your business.',
+                subtitle: 'Multi-store management with full accounting',
+                description: 'Our Pro package includes everything in Advanced, plus multi-store management capabilities. Control multiple store locations from one dashboard with full accounting integration across all stores and priority support with dedicated assistance.',
                 target: 'Designed for established businesses with enterprise operations and 5-20 retail locations.',
                 features: [
-                    { icon: 'fa-building', title: 'Enterprise POS System', desc: 'Full enterprise solution' },
-                    { icon: 'fa-infinity', title: 'Unlimited Users', desc: 'Unlimited user accounts' },
-                    { icon: 'fa-chart-bar', title: 'Advanced Analytics', desc: 'Deep business insights' },
-                    { icon: 'fa-cog', title: 'Automation Workflows', desc: 'Automated business processes' },
-                    { icon: 'fa-gauge', title: 'Real-Time Dashboards', desc: 'Live business dashboards' },
-                    { icon: 'fa-star', title: 'Priority Support', desc: '24/7 priority support' }
+                    { icon: 'fa-store', title: 'All Advanced Features', desc: 'Everything from Advanced package' },
+                    { icon: 'fa-buildings', title: 'Multi-Store Management', desc: 'Manage multiple locations' },
+                    { icon: 'fa-chart-line', title: 'Full Accounting', desc: 'Integrated accounting across stores' },
+                    { icon: 'fa-headset', title: 'Priority Support', desc: 'Dedicated support assistance' },
+                    { icon: 'fa-layer-group', title: 'Centralized Dashboard', desc: 'Control all stores from one place' },
+                    { icon: 'fa-sync', title: 'Real-Time Sync', desc: 'Real-time data synchronization' }
                 ]
             },
             'Enterprise': {
-                subtitle: 'Complete customized solution for large organizations',
-                description: 'Our Enterprise package is the ultimate solution for large organizations with complex requirements. It delivers full customization, unlimited integrations, and dedicated premium support to meet your unique business needs.',
-                target: 'For large enterprises with complex operations and 20+ retail locations requiring fully customized solutions.',
+                subtitle: 'Complete solution with employee management and loyalty programs',
+                description: 'Our Enterprise package is the ultimate complete solution. It includes everything in Pro, plus employee management system for workforce coordination, Content Management System (CMS) for your business, and a loyalty points program to reward and retain customers.',
+                target: 'For large enterprises with complex operations and 20+ locations requiring comprehensive and customized solutions.',
                 features: [
-                    { icon: 'fa-hammer', title: 'Fully Customized', desc: 'Custom-built solution' },
-                    { icon: 'fa-palette', title: 'White-Label Options', desc: 'Brand your own solution' },
-                    { icon: 'fa-puzzle-piece', title: 'API Integrations', desc: 'Full API access' },
-                    { icon: 'fa-user-tie', title: 'Dedicated Manager', desc: 'Personal account manager' },
-                    { icon: 'fa-headset', title: '24/7 Support', desc: 'Round the clock support' },
-                    { icon: 'fa-cloud', title: 'Flexible Deployment', desc: 'Cloud or on-premise' }
+                    { icon: 'fa-tasks-all', title: 'All Pro Features', desc: 'Everything from Pro package' },
+                    { icon: 'fa-people-group', title: 'Employee Management', desc: 'Complete workforce management system' },
+                    { icon: 'fa-globe', title: 'CMS (Content Management)', desc: 'Manage your business content' },
+                    { icon: 'fa-gift', title: 'Loyalty Points Program', desc: 'Reward and retain customers' },
+                    { icon: 'fa-user-tie', title: 'Dedicated Support', desc: 'Dedicated account management' },
+                    { icon: 'fa-cogs', title: 'Custom Integrations', desc: 'Seamless system integrations' }
                 ]
             }
         };

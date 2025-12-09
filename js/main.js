@@ -165,6 +165,98 @@
         })
     });
 
+    // Product Read More Modal (Products.html page)
+    $(document).on('click', '.read-more-product-btn', function () {
+        var $btn = $(this);
+        var title = $btn.data('title') || '';
+        var desc = $btn.data('desc') || '';
+        var features = $btn.data('features') || '';
+        var icon = $btn.data('icon') || 'fa-shopping-cart';
+
+        // Create product modal if it doesn't exist
+        if (!$('#readMoreProductModal').length) {
+            $('body').append(`
+                <div class="service-detail-modal" id="readMoreProductModal">
+                    <div class="service-detail-content">
+                        <button class="service-detail-close">&times;</button>
+                        <div class="service-detail-body">
+                            <div class="text-center mb-4">
+                                <div class="btn-square bg-light d-inline-block mb-3">
+                                    <i class="fa ${icon} fa-4x text-secondary"></i>
+                                </div>
+                            </div>
+                            <h1 id="readMoreTitle"></h1>
+                            <p id="readMoreDesc" class="service-detail-description"></p>
+                            
+                            <div class="service-benefits-section">
+                                <h3>Key Features</h3>
+                                <ul id="readMoreFeatures" class="benefits-list"></ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-success btn-lg">Get Started</a>
+                                <a href="contact.html" class="btn btn-outline-success btn-lg">Contact Sales</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `);
+
+            // Close button
+            $(document).on('click', '#readMoreProductModal .service-detail-close', function() {
+                $('#readMoreProductModal').removeClass('show');
+                $('body').css('overflow', 'auto');
+                setTimeout(() => {
+                    $('#readMoreProductModal').remove();
+                }, 300);
+            });
+
+            // Click outside to close
+            $(document).on('click', '#readMoreProductModal', function(e) {
+                if (e.target.id === 'readMoreProductModal') {
+                    $(this).removeClass('show');
+                    $('body').css('overflow', 'auto');
+                    setTimeout(() => {
+                        $(this).remove();
+                    }, 300);
+                }
+            });
+
+            // Close on Escape
+            $(document).on('keydown', function(e) {
+                if (e.key === 'Escape' && $('#readMoreProductModal').length) {
+                    $('#readMoreProductModal').removeClass('show');
+                    $('body').css('overflow', 'auto');
+                    setTimeout(() => {
+                        $('#readMoreProductModal').remove();
+                    }, 300);
+                }
+            });
+        }
+
+        // Set content
+        $('#readMoreTitle').text(title);
+        $('#readMoreDesc').text(desc);
+
+        // Features
+        var featuresList = '';
+        features.split(',').forEach(function(feature) {
+            feature = $.trim(feature);
+            if (feature) {
+                featuresList += '<li><i class="fa fa-check text-success me-2"></i>' + feature + '</li>';
+            }
+        });
+        $('#readMoreFeatures').html(featuresList || '<li>Contact us for more details</li>');
+
+        // Show modal
+        var modal = $('#readMoreProductModal');
+        modal.addClass('show');
+        $('body').css('overflow', 'hidden');
+
+        // Scroll to top
+        $(window).scrollTop(0);
+    });
+
     // Service Detail Modal (Read More buttons on services section)
     $(document).on('click', '.service-read-more-btn', function () {
         var $btn = $(this);
@@ -188,8 +280,8 @@
                             </div>
                             
                             <div class="service-cta">
-                                <a href="contact.html" class="btn btn-primary btn-lg">Get Started</a>
-                                <a href="Packages.html" class="btn btn-outline-primary btn-lg">View Packages</a>
+                                <a href="contact.html" class="btn btn-success btn-lg">Get Started</a>
+                                <a href="contact.html" class="btn btn-outline-success btn-lg">View Packages</a>
                             </div>
                         </div>
                     </div>
@@ -278,13 +370,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="package-section">
-                                        <h3><i class="fa fa-bullseye text-primary me-2"></i>Ideal For</h3>
+                                        <h3><i class="fa fa-bullseye text-warning me-2"></i>Ideal For</h3>
                                         <p id="pkgDetailTarget"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="package-section">
-                                        <h3><i class="fa fa-star text-warning me-2"></i>Key Features</h3>
+                                        <h3><i class="fa fa-star text-success me-2"></i>Key Features</h3>
                                         <ul id="pkgDetailFeatures" class="features-list"></ul>
                                     </div>
                                 </div>
@@ -296,8 +388,8 @@
                             </div>
                             
                         <div class="package-cta">
-                                <a href="contact.html" class="btn btn-primary btn-lg">Get Started Today</a>
-                                <a href="contact.html" class="btn btn-outline-primary btn-lg">Contact Sales</a>
+                                <a href="contact.html" class="btn btn-success btn-lg">Get Started Today</a>
+                                <a href="contact.html" class="btn btn-outline-success btn-lg">Contact Sales</a>
                             </div>
                         </div>
                     </div>
@@ -339,50 +431,56 @@
         // Define package details
         var packageData = {
             'Lite Package': {
-                target: 'Perfect for small businesses and startups looking to get their first POS system up and running quickly. Ideal for single-location shops that want to streamline their daily sales operations and get started with digital management efficiently.',
+                target: 'Perfect for small businesses and startups. Get started fast with essential features - make sales, manage orders, track inventory, manage customers and suppliers, and generate comprehensive reports with single user access.',
                 benefits: [
-                    { icon: 'fa-bolt', title: 'Quick Setup', desc: 'Get your system running in just one hour with our simple onboarding process' },
-                    { icon: 'fa-credit-card', title: 'Easy Payments', desc: 'Accept multiple payment methods including cash, cards, and mobile payments' },
-                    { icon: 'fa-mobile', title: 'Mobile Ready', desc: 'Access your POS system from any device, anywhere, anytime' },
-                    { icon: 'fa-users', title: 'Customer Management', desc: 'Build and maintain customer profiles to track purchases and preferences' },
-                    { icon: 'fa-list', title: 'Inventory Basics', desc: 'Track stock levels and manage basic inventory operations' },
-                    { icon: 'fa-chart-pie', title: 'Sales Reports', desc: 'View daily sales summaries and track your business performance' }
+                    { icon: 'fa-cash-register', title: 'Sales & Orders', desc: 'Make sales and receive orders easily' },
+                    { icon: 'fa-cube', title: 'Inventory Management', desc: 'Add and remove items from inventory' },
+                    { icon: 'fa-users', title: 'Customer Management', desc: 'Manage customers and suppliers' },
+                    { icon: 'fa-user', title: 'Single User', desc: 'Single user access account' },
+                    { icon: 'fa-chart-bar', title: 'Sales Reports', desc: 'Generate total and periodic sales reports' },
+                    { icon: 'fa-file-lines', title: 'Detailed Reports', desc: 'Reports for items and customers' }
                 ],
                 pricing: ''
             },
-            'Advance Package': {
-                target: 'Designed for growing businesses with multiple departments or locations. Perfect for operations that need advanced inventory management across locations, comprehensive reporting, detailed analytics, and customer relationship management tools.',
+            'Advanced Package': {
+                target: 'Perfect for growing businesses with multiple departments and 2-5 locations. Includes production management, full accounting, accounts payable, multi-user access, profit & loss reports, and advanced analytics.',
                 benefits: [
-                    { icon: 'fa-warehouse', title: 'Multi-Location Inventory', desc: 'Manage inventory across multiple store locations from one central dashboard' },
-                    { icon: 'fa-chart-bar', title: 'Advanced Reports', desc: 'Generate custom reports with detailed insights into your business operations' },
-                    { icon: 'fa-users', title: 'Customer Loyalty Program', desc: 'Create loyalty programs to reward and retain your best customers' },
-                    { icon: 'fa-user-tie', title: 'Team Management', desc: 'Manage multiple staff members with different access levels and permissions' },
-                    { icon: 'fa-history', title: 'Transaction History', desc: 'Complete audit trail of all transactions with detailed records' },
-                    { icon: 'fa-database', title: 'Data Analytics', desc: 'Analyze trends and patterns to make informed business decisions' }
+                    { icon: 'fa-boxes-stacked', title: 'Sales & Orders', desc: 'Complete sales and order management' },
+                    { icon: 'fa-cube', title: 'Inventory Management', desc: 'Add, remove, and track items efficiently' },
+                    { icon: 'fa-users', title: 'Multi-User Access', desc: 'Multiple team members can use the system' },
+                    { icon: 'fa-industry', title: 'Production Management', desc: 'Manage production workflows and processes' },
+                    { icon: 'fa-chart-line', title: 'Full Accounting', desc: 'Complete accounting capabilities and tracking' },
+                    { icon: 'fa-receipt', title: 'Accounts Payable', desc: 'Track and manage vendor payments' },
+                    { icon: 'fa-chart-pie', title: 'P&L Reports', desc: 'Detailed profit and loss statements' },
+                    { icon: 'fa-analytics', title: 'Analytics', desc: 'Business intelligence and insights' }
                 ],
                 pricing: ''
             },
             'Pro Package': {
-                target: 'Built for established businesses demanding advanced features, automation, and deep analytics. Ideal for companies with 5-20 locations needing enterprise-level control, real-time dashboards, and sophisticated operational insights.',
+                target: 'Designed for established businesses with 5-20 locations. Includes everything in Advanced plus multi-store management, full accounting integration across stores, and priority support with dedicated assistance.',
                 benefits: [
-                    { icon: 'fa-cogs', title: 'Workflow Automation', desc: 'Automate repetitive tasks and streamline your business processes' },
-                    { icon: 'fa-chart-line', title: 'Predictive Analytics', desc: 'Use advanced analytics to forecast trends and predict customer behavior' },
-                    { icon: 'fa-infinity', title: 'Unlimited Users', desc: 'Add as many team members as you need without additional user costs' },
-                    { icon: 'fa-dashboard', title: 'Real-Time Dashboard', desc: 'Monitor your entire business in real-time with live business metrics' },
-                    { icon: 'fa-puzzle-piece', title: 'API Integration', desc: 'Connect with other business applications and tools seamlessly' },
-                    { icon: 'fa-globe', title: 'Multi-Branch Operations', desc: 'Manage operations across multiple branches with centralized control' }
+                    { icon: 'fa-store', title: 'All Advanced Features', desc: 'Everything from Advanced package included' },
+                    { icon: 'fa-buildings', title: 'Multi-Store Management', desc: 'Manage multiple store locations seamlessly' },
+                    { icon: 'fa-chart-line', title: 'Full Accounting', desc: 'Integrated accounting across all stores' },
+                    { icon: 'fa-headset', title: 'Priority Support', desc: 'Dedicated support assistance available' },
+                    { icon: 'fa-layer-group', title: 'Centralized Dashboard', desc: 'Control all stores from one place' },
+                    { icon: 'fa-sync', title: 'Real-Time Sync', desc: 'Real-time data synchronization' },
+                    { icon: 'fa-users-gear', title: 'Advanced Management', desc: 'Comprehensive management tools' },
+                    { icon: 'fa-chart-bar', title: 'Multi-Store Reports', desc: 'Cross-store reporting and analytics' }
                 ],
                 pricing: ''
             },
             'Enterprise Package': {
-                target: 'The ultimate solution for large organizations with complex requirements. Fully customizable with dedicated implementation support, premium integration options, and comprehensive business solutions tailored to your unique needs.',
+                target: 'The complete solution for large enterprises with 20+ locations. Includes everything in Pro plus employee management system, Content Management System (CMS), loyalty points program, and dedicated implementation support.',
                 benefits: [
-                    { icon: 'fa-puzzle-piece', title: 'Full Customization', desc: 'Customize every aspect of the system to match your business processes' },
-                    { icon: 'fa-user-secret', title: 'Dedicated Implementation', desc: 'Get support from our team during setup and deployment' },
-                    { icon: 'fa-network-wired', title: 'Advanced Integrations', desc: 'Connect to any third-party system through APIs and webhooks' },
-                    { icon: 'fa-sitemap', title: 'Enterprise Scale', desc: 'Handle unlimited transactions and users across your entire organization' },
-                    { icon: 'fa-lock', title: 'Advanced Security', desc: 'Enterprise-grade security with encryption and compliance features' },
-                    { icon: 'fa-cloud', title: 'Deployment Options', desc: 'Choose cloud-based or on-premise deployment based on your needs' }
+                    { icon: 'fa-tasks-all', title: 'All Pro Features', desc: 'Everything from Pro package included' },
+                    { icon: 'fa-people-group', title: 'Employee Management', desc: 'Complete workforce management system' },
+                    { icon: 'fa-globe', title: 'CMS System', desc: 'Content Management System for your business' },
+                    { icon: 'fa-gift', title: 'Loyalty Program', desc: 'Reward and retain customers effectively' },
+                    { icon: 'fa-user-tie', title: 'Dedicated Support', desc: 'Dedicated account management team' },
+                    { icon: 'fa-cogs', title: 'Custom Integrations', desc: 'Seamless integration with other systems' },
+                    { icon: 'fa-lock', title: 'Advanced Security', desc: 'Enterprise-grade security features' },
+                    { icon: 'fa-infinity', title: 'Unlimited Scale', desc: 'Handle unlimited transactions and users' }
                 ],
                 pricing: ''
             }
@@ -419,7 +517,7 @@
             benefitsHtml += `
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fa ${benefit.icon} fa-2x text-primary"></i>
+                        <i class="fa ${benefit.icon} fa-2x text-success"></i>
                     </div>
                     <h4>${benefit.title}</h4>
                     <p>${benefit.desc}</p>

@@ -169,7 +169,7 @@
     justify-content: center;
     font-size: 22px;
     color: var(--bs-dark);
-    background: var(--bs-primary);
+    background: #28a745;
 }
 
 .page-header {
@@ -184,7 +184,7 @@
 .page-header .breadcrumb-item,
 .page-header .breadcrumb-item a {
     font-size: 18px;
-    color: var(--bs-primary);
+    color: #ffc107;
 }
 
 .page-header .breadcrumb-item.active {
@@ -297,7 +297,7 @@
     height: 0px;
     top: 5px;
     left: -40px;
-    border-top: 2px solid var(--bs-primary);
+    border-top: 2px solid #ffc107;
     z-index: -1;
 }
 
@@ -308,7 +308,7 @@
     height: 0px;
     bottom: 6px;
     left: -60px;
-    border-bottom: 2px solid var(--bs-primary);
+    border-bottom: 2px solid #ffc107;
     z-index: -1;
 }
 
