@@ -29,7 +29,7 @@
         `);
 
         $('.toast-container').append(toast);
-        
+
         // Show toast
         setTimeout(() => {
             toast.addClass('show');
@@ -37,7 +37,7 @@
 
         // Auto-remove after duration
         setTimeout(() => {
-            toast.fadeOut(300, function() {
+            toast.fadeOut(300, function () {
                 $(this).remove();
             });
         }, duration);
@@ -64,19 +64,19 @@
             `);
 
             // Close button handler
-            $(document).on('click', '.close-success-modal', function() {
+            $(document).on('click', '.close-success-modal', function () {
                 closeSuccessModal();
             });
 
             // Click outside to close
-            $(document).on('click', '.success-modal-overlay', function(e) {
+            $(document).on('click', '.success-modal-overlay', function (e) {
                 if (e.target === this) {
                     closeSuccessModal();
                 }
             });
 
             // Close on Escape key
-            $(document).on('keydown', function(e) {
+            $(document).on('keydown', function (e) {
                 if (e.key === 'Escape') {
                     closeSuccessModal();
                 }
@@ -118,8 +118,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -132,8 +132,8 @@
             $('.nav-bar').removeClass('fixed-top').css('padding', '0px 90px');
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -143,7 +143,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -203,7 +203,7 @@
             `);
 
             // Close button
-            $(document).on('click', '#readMoreProductModal .service-detail-close', function() {
+            $(document).on('click', '#readMoreProductModal .service-detail-close', function () {
                 $('#readMoreProductModal').removeClass('show');
                 $('body').css('overflow', 'auto');
                 setTimeout(() => {
@@ -212,7 +212,7 @@
             });
 
             // Click outside to close
-            $(document).on('click', '#readMoreProductModal', function(e) {
+            $(document).on('click', '#readMoreProductModal', function (e) {
                 if (e.target.id === 'readMoreProductModal') {
                     $(this).removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -223,7 +223,7 @@
             });
 
             // Close on Escape
-            $(document).on('keydown', function(e) {
+            $(document).on('keydown', function (e) {
                 if (e.key === 'Escape' && $('#readMoreProductModal').length) {
                     $('#readMoreProductModal').removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -240,7 +240,7 @@
 
         // Features
         var featuresList = '';
-        features.split(',').forEach(function(feature) {
+        features.split(',').forEach(function (feature) {
             feature = $.trim(feature);
             if (feature) {
                 featuresList += '<li><i class="fa fa-check text-success me-2"></i>' + feature + '</li>';
@@ -289,7 +289,7 @@
             `);
 
             // Close button
-            $(document).on('click', '#serviceDetailModal .service-detail-close', function() {
+            $(document).on('click', '#serviceDetailModal .service-detail-close', function () {
                 $('#serviceDetailModal').removeClass('show');
                 $('body').css('overflow', 'auto');
                 setTimeout(() => {
@@ -298,7 +298,7 @@
             });
 
             // Click outside to close
-            $(document).on('click', '#serviceDetailModal', function(e) {
+            $(document).on('click', '#serviceDetailModal', function (e) {
                 if (e.target.id === 'serviceDetailModal') {
                     $(this).removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -309,7 +309,7 @@
             });
 
             // Close on Escape
-            $(document).on('keydown', function(e) {
+            $(document).on('keydown', function (e) {
                 if (e.key === 'Escape' && $('#serviceDetailModal').length) {
                     $('#serviceDetailModal').removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -326,7 +326,7 @@
 
         // Benefits
         var benefitsList = '';
-        benefits.split('|').forEach(function(benefit) {
+        benefits.split('|').forEach(function (benefit) {
             benefit = $.trim(benefit);
             if (benefit) {
                 benefitsList += '<li><i class="fa fa-check text-success me-2"></i>' + benefit + '</li>';
@@ -397,7 +397,7 @@
             `);
 
             // Close button
-            $(document).on('click', '#packageDetailFullModal .package-detail-close', function() {
+            $(document).on('click', '#packageDetailFullModal .package-detail-close', function () {
                 $('#packageDetailFullModal').removeClass('show');
                 $('body').css('overflow', 'auto');
                 setTimeout(() => {
@@ -406,7 +406,7 @@
             });
 
             // Click outside to close
-            $(document).on('click', '#packageDetailFullModal', function(e) {
+            $(document).on('click', '#packageDetailFullModal', function (e) {
                 if (e.target.id === 'packageDetailFullModal') {
                     $(this).removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -417,7 +417,7 @@
             });
 
             // Close on Escape
-            $(document).on('keydown', function(e) {
+            $(document).on('keydown', function (e) {
                 if (e.key === 'Escape' && $('#packageDetailFullModal').length) {
                     $('#packageDetailFullModal').removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -503,7 +503,7 @@
 
         // Features
         var featuresList = '';
-        features.split('|').forEach(function(feature) {
+        features.split('|').forEach(function (feature) {
             feature = $.trim(feature);
             if (feature) {
                 featuresList += '<li><i class="fa fa-check text-success me-2"></i>' + feature + '</li>';
@@ -513,11 +513,11 @@
 
         // Benefits grid
         var benefitsHtml = '';
-        pkgData.benefits.forEach(function(benefit) {
+        pkgData.benefits.forEach(function (benefit) {
             benefitsHtml += `
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fa ${benefit.icon} fa-2x text-success"></i>
+                        <i class="fa ${benefit.icon} fa-2x" style="color: #ffc107;"></i>
                     </div>
                     <h4>${benefit.title}</h4>
                     <p>${benefit.desc}</p>
@@ -584,7 +584,7 @@
             `);
 
             // Close button
-            $(document).on('click', '#productDetailFullModal .product-detail-close', function() {
+            $(document).on('click', '#productDetailFullModal .product-detail-close', function () {
                 $('#productDetailFullModal').removeClass('show');
                 $('body').css('overflow', 'auto');
                 setTimeout(() => {
@@ -593,7 +593,7 @@
             });
 
             // Click outside to close
-            $(document).on('click', '#productDetailFullModal', function(e) {
+            $(document).on('click', '#productDetailFullModal', function (e) {
                 if (e.target.id === 'productDetailFullModal') {
                     $(this).removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -604,7 +604,7 @@
             });
 
             // Close on Escape
-            $(document).on('keydown', function(e) {
+            $(document).on('keydown', function (e) {
                 if (e.key === 'Escape' && $('#productDetailFullModal').length) {
                     $('#productDetailFullModal').removeClass('show');
                     $('body').css('overflow', 'auto');
@@ -622,7 +622,7 @@
 
         // Features
         var featuresList = '';
-        features.split('|').forEach(function(feature) {
+        features.split('|').forEach(function (feature) {
             feature = $.trim(feature);
             if (feature) {
                 featuresList += `
@@ -661,7 +661,7 @@
         $('.donation-item .progress .progress-bar').each(function () {
             $(this).css("height", $(this).attr("aria-valuenow") + '%');
         });
-    }, {offset: '80%'});
+    }, { offset: '80%' });
 
 
     // Header carousel
@@ -673,8 +673,8 @@
         smartSpeed: 1000,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
         ]
@@ -691,7 +691,7 @@
         dots: false,
         loop: true,
         nav: true,
-        navText : [
+        navText: [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
         ]
@@ -703,6 +703,6 @@
         $('#currentYear').text(currentYear);
     });
 
-    
+
 })(jQuery);
 

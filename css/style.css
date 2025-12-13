@@ -2087,3 +2087,40 @@
         min-height: 50px;
     }
 }
+
+/* Package Modal Benefit Icons */
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #28a745;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.benefit-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
