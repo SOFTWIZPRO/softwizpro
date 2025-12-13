@@ -812,7 +812,7 @@
 }
 
 .modern-toast.info {
-    border-left-color: #0d6efd;
+    border-left-color: #28a745;
     background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
 }
 
@@ -844,7 +844,7 @@
 }
 
 .modern-toast.info .toast-icon {
-    background-color: #0d6efd;
+    background-color: #28a745;
     color: white;
 }
 
@@ -873,7 +873,7 @@
 }
 
 .modern-toast.info .toast-title {
-    color: #0d6efd;
+    color: #28a745;
 }
 
 .modern-toast.warning .toast-title {
@@ -926,7 +926,7 @@
 }
 
 .modern-toast.info .toast-progress {
-    background-color: #0d6efd;
+    background-color: #28a745;
 }
 
 .modern-toast.warning .toast-progress {
@@ -1123,7 +1123,7 @@
     background: rgba(255, 255, 255, 1);
     transform: rotate(90deg) scale(1.1);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    color: #0d6efd;
+    color: #28a745;
 }
 
 .package-detail-header {
@@ -1151,7 +1151,7 @@
 .package-detail-info h1 {
     font-size: 48px;
     font-weight: 700;
-    color: #0d6efd;
+    color: #28a745;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1173,7 +1173,7 @@
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 30px;
-    border-left: 5px solid #0d6efd;
+    border-left: 5px solid #28a745;
     animation: fadeIn 0.6s ease-out 0.3s backwards;
 }
 
@@ -1206,7 +1206,7 @@
 
 .features-list li:hover {
     padding-left: 10px;
-    color: #0d6efd;
+    color: #28a745;
     font-weight: 600;
 }
 
@@ -1238,7 +1238,7 @@
     text-align: center;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-top: 3px solid #0d6efd;
+    border-top: 3px solid #28a745;
 }
 
 .benefit-card:hover {
@@ -1250,7 +1250,7 @@
     width: 60px;
     height: 60px;
     margin: 0 auto 15px;
-    background: linear-gradient(135deg, #0d6efd, #0056b3);
+    background: linear-gradient(135deg, #28a745, #0056b3);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1299,7 +1299,7 @@
 }
 
 .pricing-content strong {
-    color: #0d6efd;
+    color: #28a745;
     font-size: 22px;
 }
 
@@ -1325,7 +1325,7 @@
 }
 
 .package-cta .btn-primary {
-    background: linear-gradient(135deg, #0d6efd, #0056b3);
+    background: linear-gradient(135deg, #28a745, #0056b3);
     border: none;
     box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
 }
@@ -1336,13 +1336,13 @@
 }
 
 .package-cta .btn-outline-primary {
-    border: 2px solid #0d6efd;
-    color: #0d6efd;
+    border: 2px solid #28a745;
+    color: #28a745;
     background: white;
 }
 
 .package-cta .btn-outline-primary:hover {
-    background: #0d6efd;
+    background: #28a745;
     color: white;
 }
 
@@ -1508,7 +1508,7 @@
 }
 
 .product-detail-close:hover {
-    background: #0d6efd;
+    background: #28a745;
     color: white;
     transform: rotate(90deg);
 }
@@ -1568,7 +1568,7 @@
     left: 0;
     width: 50px;
     height: 3px;
-    background: linear-gradient(90deg, #0d6efd, #ffc107);
+    background: linear-gradient(90deg, #28a745, #ffc107);
     border-radius: 2px;
 }
 
@@ -1599,7 +1599,7 @@
     left: 0;
     width: 50px;
     height: 3px;
-    background: linear-gradient(90deg, #0d6efd, #ffc107);
+    background: linear-gradient(90deg, #28a745, #ffc107);
     border-radius: 2px;
 }
 
@@ -1607,7 +1607,7 @@
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
     padding: 30px;
     border-radius: 10px;
-    border-left: 4px solid #0d6efd;
+    border-left: 4px solid #28a745;
 }
 
 .features-list {
@@ -1662,7 +1662,7 @@
 }
 
 .product-cta-section .btn-primary {
-    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    background: linear-gradient(135deg, #28a745, #0a58ca);
     border: none;
 }
 
@@ -1672,12 +1672,12 @@
 }
 
 .product-cta-section .btn-outline-primary {
-    border: 2px solid #0d6efd;
-    color: #0d6efd;
+    border: 2px solid #28a745;
+    color: #28a745;
 }
 
 .product-cta-section .btn-outline-primary:hover {
-    background: #0d6efd;
+    background: #28a745;
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2);
@@ -1810,7 +1810,7 @@
 }
 
 .service-detail-close:hover {
-    color: #0d6efd;
+    color: #28a745;
     transform: rotate(90deg);
 }
 
@@ -1844,7 +1844,7 @@
     color: #333;
     margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #0d6efd;
+    border-bottom: 2px solid #28a745;
 }
 
 .benefits-list {
@@ -1862,7 +1862,7 @@
 }
 
 .benefits-list li:hover {
-    color: #0d6efd;
+    color: #28a745;
     padding-left: 10px;
 }
 
@@ -1890,7 +1890,7 @@
 }
 
 .service-cta .btn-primary {
-    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    background: linear-gradient(135deg, #28a745, #0a58ca);
     border: none;
 }
 
@@ -1900,12 +1900,12 @@
 }
 
 .service-cta .btn-outline-primary {
-    border: 2px solid #0d6efd;
-    color: #0d6efd;
+    border: 2px solid #28a745;
+    color: #28a745;
 }
 
 .service-cta .btn-outline-primary:hover {
-    background: #0d6efd;
+    background: #28a745;
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2);

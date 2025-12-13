@@ -194,7 +194,7 @@
                             </div>
                             
                             <div class="service-cta">
-                                <a href="contact.html" class="btn btn-success btn-lg">Get Started</a>
+                                <a href="get-started.html" class="btn btn-success btn-lg">Get Started</a>
                                 <a href="contact.html" class="btn btn-outline-success btn-lg">Contact Sales</a>
                             </div>
                         </div>
@@ -388,7 +388,7 @@
                             </div>
                             
                         <div class="package-cta">
-                                <a href="contact.html" class="btn btn-success btn-lg">Get Started Today</a>
+                                <a href="get-started.html" class="btn btn-success btn-lg">Get Started Today</a>
                                 <a href="contact.html" class="btn btn-outline-success btn-lg">Contact Sales</a>
                             </div>
                         </div>
