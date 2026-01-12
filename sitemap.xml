@@ -170,77 +170,13 @@
   </url>
 
   <url>
-    <loc>https://softwizpro.com/services/expense-tracking</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://softwizpro.com/services/reports-analytics</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://softwizpro.com/services/customer-support</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Industry-specific URLs -->
-  <url>
-    <loc>https://softwizpro.com/solutions/retail</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://softwizpro.com/solutions/restaurant</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://softwizpro.com/solutions/hospitality</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Company Information URLs -->
-  <url>
-    <loc>https://softwizpro.com/company/mission</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://softwizpro.com/company/team</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://softwizpro.com/company/careers</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Support URLs -->
-  <url>
-    <loc>https://softwizpro.com/support</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
   <url>
     <loc>https://softwizpro.com/support/documentation</loc>
@@ -251,13 +187,6 @@
 
   <url>
     <loc>https://softwizpro.com/support/training</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://softwizpro.com/support/faq</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -278,13 +207,7 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://softwizpro.com/privacy-policy</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+
 
   <url>
     <loc>https://softwizpro.com/terms-of-service</loc>
