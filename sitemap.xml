@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://softwizpro.com/</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://softwizpro.com/index.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://softwizpro.com/about.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/Products.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/Packages.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/contact.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/get-started.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/feature.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Detail Pages -->
+  <url>
+    <loc>https://softwizpro.com/product-detail.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/package-detail.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/package-detail-new.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Product Detail Pages with Parameters -->
+  <url>
+    <loc>https://softwizpro.com/product-detail.html?product=Retail%20Management%20System</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/product-detail.html?product=Bar%20and%20Restaurant%20System</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/product-detail.html?product=Payroll%20System</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Package Detail Pages with Parameters -->
+  <url>
+    <loc>https://softwizpro.com/package-detail.html?package=Lite</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/package-detail.html?package=Advanced</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/package-detail.html?package=Pro</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/package-detail.html?package=Enterprise</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Resources -->
+  <url>
+    <loc>https://softwizpro.com/lib/files/SOFTWIZPRO%20Handbook.pdf</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Robots.txt -->
+  <url>
+    <loc>https://softwizpro.com/robots.txt</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Service-specific URLs for better SEO -->
+  <url>
+    <loc>https://softwizpro.com/services/point-of-sale</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/services/stock-management</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/services/accounting</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/services/reports-analytics</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Industry-specific URLs -->
+
+  <url>
+    <loc>https://softwizpro.com/support/documentation</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/support/training</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog/News URLs (for future content) -->
+  <url>
+    <loc>https://softwizpro.com/blog</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/news</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+
+  <url>
+    <loc>https://softwizpro.com/terms-of-service</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://softwizpro.com/cookie-policy</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

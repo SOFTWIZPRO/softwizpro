@@ -1,4 +1,9 @@
+
 User-agent: *
 Allow: /
 
 Sitemap: https://softwizpro.com/sitemap.xml
+
+
+
+
