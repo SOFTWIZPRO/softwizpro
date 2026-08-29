@@ -256,23 +256,23 @@
 
         /* CTA Section */
         .product-cta-section {
-            background: linear-gradient(135deg, #28a745, #28a745);
+            background: linear-gradient(135deg, #f1c469, #ffd37c);
             padding: 60px 40px;
             border-radius: 10px;
-            color: white;
+            color: black;
             text-align: center;
             margin-bottom: 40px;
         }
 
         .product-cta-section h2 {
             font-size: 36px;
-            color: white;
+            color: black;
             margin-bottom: 20px;
         }
 
         .product-cta-section p {
             font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
+            color: black;
             margin-bottom: 30px;
             max-width: 600px;
             margin-left: auto;
@@ -577,8 +577,70 @@
     <script>
         // Product data
         const products = {
+            'Point of Sale System': {
+                image: 'img/Rental M.png', // Replace with your POS image path
+                description: 'A point-of-sale and business management system built for shops, minimarts, supermarkets, hardware stores, cosmetic shops and boutiques, giving owners full control over sales and stock. From real-time stock tracking to fast billing, SOFTWIZPOS keeps every sale and shelf under control.',
+                features: [
+                    { title: 'Real-Time Stock Management', description: 'Monitor stock levels instantly across all product categories as sales happen.' },
+                    { title: 'Fast, Accurate Billing', description: 'Process sales quickly with a clean, intuitive billing interface that reduces errors.' },
+                    { title: 'Expiry & Low-Stock Alerts', description: 'Get automatic alerts when products are running low or approaching expiry dates.' },
+                    { title: 'Offline and Online Capability', description: 'Keep selling even without internet — syncs automatically when back online.' },
+                    { title: 'M-Pesa & Payment Integration', description: 'Accept M-Pesa, cash, and card payments directly within the system.' },
+                    { title: 'Sales Reporting', description: 'Generate daily, weekly and monthly sales reports to understand your business better.' }
+                ],
+                capabilities: [
+                    { icon: 'fa-shopping-cart', title: 'Real-Time Stock Management', desc: 'Stay in control of every item on your shelves in real time.' },
+                    { icon: 'fa-receipt', title: 'Fast, Accurate Billing', desc: 'Serve customers faster with a smooth, error-free billing process.' },
+                    { icon: 'fa-bell', title: 'Expiry & Low-Stock Alerts', desc: 'Never run out of stock or sell expired goods again.' },
+                    { icon: 'fa-wifi', title: 'Offline & Online Capability', desc: 'Works without internet and syncs when connection is restored.' },
+                    { icon: 'fa-mobile-alt', title: 'M-Pesa & Payment Integration', desc: 'Accept multiple payment methods directly in the system.' },
+                    { icon: 'fa-chart-bar', title: 'Sales Reporting', desc: 'Clear reports that show exactly how your business is performing.' }
+                ]
+            },
+
+            'Custom Software Development': {
+                image: 'img/Design21 (1).png', // Replace with your custom dev image path
+                description: 'Bespoke software for businesses whose workflow, growth or idea doesn\'t fit an existing product, built around your exact needs. We don\'t ask your business to change to fit software — we build software that fits your business.',
+                features: [
+                    { title: 'Process-Specific Builds', description: 'Software designed around your unique business processes, not the other way around.' },
+                    { title: 'Multi-Branch Unified Systems', description: 'Connect multiple branches or departments into one centralised platform.' },
+                    { title: 'Enterprise Internal Platforms', description: 'Build internal tools and platforms for managing operations at scale.' },
+                    { title: 'Mobile App Development', description: 'Custom mobile apps for Android and iOS tailored to your business idea.' },
+                    { title: 'Third-Party Integrations', description: 'Integrate with existing tools, APIs, payment gateways, and government systems.' },
+                    { title: 'Ongoing Support & Maintenance', description: 'Full support after launch — updates, fixes and feature additions as you grow.' }
+                ],
+                capabilities: [
+                    { icon: 'fa-code', title: 'Process-Specific Builds', desc: 'Software shaped entirely around how your business works.' },
+                    { icon: 'fa-sitemap', title: 'Multi-Branch Systems', desc: 'One unified system for all your locations and teams.' },
+                    { icon: 'fa-building', title: 'Enterprise Platforms', desc: 'Powerful internal platforms built for large-scale operations.' },
+                    { icon: 'fa-mobile-alt', title: 'Mobile App Development', desc: 'Custom Android and iOS apps for your business or idea.' },
+                    { icon: 'fa-plug', title: 'Third-Party Integrations', desc: 'Connect seamlessly with APIs, payment tools and more.' },
+                    { icon: 'fa-tools', title: 'Support & Maintenance', desc: 'We stay with you after launch to keep things running.' }
+                ]
+            },
+
+            'Business Integrations': {
+                image: 'img/POS system and analytics setup.png', // Replace with your integrations image path
+                description: 'Seamless M-Pesa and bank integration within your POS or existing software, connecting payments directly into your business systems. Whether built into SOFTWIZPOS or integrated into your current system, this solution delivers real-time, automated payment management.',
+                features: [
+                    { title: 'Direct M-Pesa Payment Capture', description: 'Receive and record M-Pesa payments directly inside your business system in real time.' },
+                    { title: 'Bank Account Integration', description: 'Connect your bank account to your system for automatic transaction recording and reconciliation.' },
+                    { title: 'Automated Payment Reconciliation', description: 'Eliminate manual matching — payments are reconciled automatically against sales and invoices.' },
+                    { title: 'Integration into Existing Software', description: 'Works with your current POS or business system — no need to replace what you already use.' },
+                    { title: 'Real-Time Transaction Visibility', description: 'See every payment as it happens with a live transaction feed and audit trail.' },
+                    { title: 'KRA eTIMS Compliance', description: 'Onboard onto KRA eTIMS-compliant invoicing, with or without an existing POS system.' }
+                ],
+                capabilities: [
+                    { icon: 'fa-mobile-alt', title: 'Direct M-Pesa Payment Capture', desc: 'Payments land directly in your system the moment they are made.' },
+                    { icon: 'fa-university', title: 'Bank Account Integration', desc: 'Your bank and your business software finally talking to each other.' },
+                    { icon: 'fa-sync-alt', title: 'Automated Reconciliation', desc: 'Every payment matched automatically — no manual work needed.' },
+                    { icon: 'fa-plug', title: 'Integration into Existing Software', desc: 'Drop-in integration with your current system.' },
+                    { icon: 'fa-eye', title: 'Real-Time Transaction Visibility', desc: 'A live view of every payment coming into your business.' },
+                    { icon: 'fa-file-invoice', title: 'KRA eTIMS Compliance', desc: 'Stay compliant with automated KRA eTIMS invoicing.' }
+                ]
+            },
             'Retail Management System': {
-                image: 'img/RetailSystem.png',
+                image: 'img/Rental M.png',
                 description: 'Our Retail Management System is specifically designed for retail businesses of all sizes. It combines a powerful POS system with comprehensive inventory management, customer loyalty programs, and detailed sales analytics. Manage multiple stores from a central dashboard, track real-time sales performance, and make informed decisions to drive profitability.',
                 features: [
                     { title: 'Multi-Store Management', description: 'Centralize operations across all your retail locations' },

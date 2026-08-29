@@ -2124,3 +2124,297 @@
     color: #666;
     margin: 0;
 }
+
+
+/* ===== Hero Section ===== */
+.hero-section {
+    position: relative;
+    background: #F5EDE0;
+    overflow: hidden;
+    padding: 70px 0 60px;
+    border-bottom: 3px solid var(--bs-primary);
+}
+
+/* Logo watermark centred in the hero */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: url(../img/logo.png) center center no-repeat;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Subtle right-side tint panel */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(135deg, #FDF8EA 0%, rgba(255, 172, 0, 0.07) 100%);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-bg-overlay {
+    display: none; /* not needed on white bg */}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    text-align: center;
+}
+
+/* Brand / Logo */
+.hero-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-logo {
+    max-height: 140px;
+    width: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
+}
+
+.hero-tagline {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--bs-secondary);
+    margin: 0;
+    background: rgba(26, 104, 91, 0.08);
+    padding: 5px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(26, 104, 91, 0.2);
+}
+
+/* Headline */
+.hero-headline h1 {
+    font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--bs-dark);
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.hero-highlight {
+    color: var(--bs-secondary);
+    position: relative;
+}
+
+.hero-highlight::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: var(--bs-primary);
+    border-radius: 2px;
+}
+
+.hero-sub {
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    color: #555;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+/* Product Cards Grid */
+.hero-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.hero-card {
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 16px;
+    padding: 32px 22px 26px;
+    text-decoration: none;
+    color: var(--bs-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.hero-card:hover {
+    border-color: var(--bs-primary);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(255, 172, 0, 0.18);
+    text-decoration: none;
+    color: var(--bs-dark);
+}
+
+.hero-card-icon {
+    width: 66px;
+    height: 66px;
+    background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #fff;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(255, 172, 0, 0.3);
+}
+
+.hero-card:hover .hero-card-icon {
+    transform: scale(1.12) rotate(-5deg);
+    box-shadow: 0 8px 24px rgba(255, 172, 0, 0.45);
+}
+
+.hero-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--bs-dark);
+    line-height: 1.3;
+}
+
+.hero-card p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.hero-card-cta {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--bs-secondary);
+    letter-spacing: 0.4px;
+    margin-top: 4px;
+}
+
+.hero-card:hover .hero-card-cta {
+    color: var(--bs-primary);
+}
+
+/* CTA Buttons */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-btn-primary {
+    padding: 14px 40px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 8px;
+    background: var(--bs-primary);
+    border: 2px solid var(--bs-primary);
+    color: var(--bs-dark);
+    box-shadow: 0 6px 20px rgba(255, 172, 0, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.hero-btn-primary:hover {
+    background: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(26, 104, 91, 0.3);
+}
+
+.hero-btn-outline {
+    padding: 14px 40px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--bs-secondary);
+    color: var(--bs-secondary);
+    background: transparent;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-btn-outline:hover {
+    background: var(--bs-secondary);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .hero-section::after {
+        display: none; /* hide tint panel on smaller screens, watermark stays */
+    }
+
+    .hero-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        padding: 50px 0 44px;
+    }
+
+    .hero-logo {
+        max-height: 100px;
+    }
+
+    .hero-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .hero-card {
+        padding: 22px 14px 18px;
+    }
+
+    .hero-card-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .hero-card h3 {
+        font-size: 13px;
+    }
+
+    .hero-card p {
+        display: none;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-outline {
+        text-align: center;
+    }
+}
